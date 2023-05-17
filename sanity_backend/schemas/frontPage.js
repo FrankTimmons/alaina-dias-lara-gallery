@@ -6,7 +6,7 @@ export default {
     {
       name: 'painting',
       type: 'string',
-      title: 'Painting'
+      title: 'Painting Title'
     },
     {
       name: 'image',
@@ -15,7 +15,7 @@ export default {
     },
     {
       name: 'quote',
-      type: 'string',
+      type: 'text',
       title: 'Quote'
     }
   ]
