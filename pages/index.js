@@ -7,7 +7,7 @@ export default function Home({frontPage}) {
   return (
     <main>
       <Header/>
-      <Banner image={urlFor(frontPage[0].image)}/>
+      <Banner banner={frontPage[0]}/>
       {/* <img alt='' src={urlFor(frontPage[0].image)}></img>  */}
     </main>
   )

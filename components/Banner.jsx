@@ -1,13 +1,14 @@
 import React from 'react'
+import { urlFor } from '../lib/client';
 
-const Banner = ({image}) => {
+const Banner = ({banner}) => {
   return (
     <div className='flex flex-col items-center'>
-      <img className='h-auto w-full' src={image}/>
-      <h1 className='text-center mt-10'>
-        “Life is a balance between transformation and resistance to transformation. Think of yourself as a dancer on the blurry edge separating order from chaos.”
+      <img className='h-auto w-full' src={urlFor(banner.image)}/>
+      <h1 className='text-center my-10'>
+        {banner.quote}
       </h1>
-      <h1>- Fred Alan Wolf, Ph.D.</h1>
+      
     </div>
   )
 }
