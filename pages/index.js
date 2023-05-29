@@ -8,8 +8,8 @@ export default function Home({frontPage, galleries}) {
   return (
     <main>
       <Header/>
-      <Banner banner={frontPage[0]}/>
       <Navbar galleries={galleries}/>
+      <Banner banner={frontPage[0]}/>
     </main>
   )
 }
