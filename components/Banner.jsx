@@ -8,7 +8,6 @@ const Banner = ({banner}) => {
       <h1 className='text-center my-10'>
         {banner.quote}
       </h1>
-      
     </div>
   )
 }

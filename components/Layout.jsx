@@ -5,7 +5,7 @@ const Layout = ({children}) => {
   return (
     <div>
       <Head>
-        <title>Alaina Nearing</title>
+        <title>Alaina Dias Lara</title>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="styles.css" />
