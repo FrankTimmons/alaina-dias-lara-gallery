@@ -15,7 +15,22 @@ module.exports = {
       fontFamily: {
         'lobster': ['"Lobster"', 'cursive'],
       },
+      keyframes: {
+        'imgFadeIn': {
+          '0%': {
+              opacity: '0'
+          },
+          '100%': {
+              opacity: '1'
+          }
+        }
+      },
+      animation: {
+        imgFadeIn:  'imgFadeIn ease 2s',
+      }
     },
   },
-  plugins: [],
+  plugins: [
+    require("tailwindcss-animate"),
+  ],
 }
