@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import { urlFor } from '../lib/client';
 
 const Banner = ({banner}) => {
-  const [style, setStyle] = useState("h-auto w-full opacity-0");
+  const [style, setStyle] = useState("h-auto w-full opacity-0 animate-[imgFadeIn_ease_10s]");
   
   useEffect(()=>{
     setStyle('h-auto w-full animate-imgFadeIn fill-mode-forwards')
