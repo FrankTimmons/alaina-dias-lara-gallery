@@ -3,7 +3,7 @@ import Head from 'next/head'
 
 const Layout = ({children}) => {
   return (
-    <div>
+    <div className='bg-white'>
       <Head>
         <title>Alaina Dias Lara</title>
         <link rel="preconnect" href="https://fonts.gstatic.com" />

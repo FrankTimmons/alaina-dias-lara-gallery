@@ -6,11 +6,11 @@ import Navbar from '@/components/Navbar';
 
 export default function Home({frontPage, galleries}) {
   return (
-    <main>
+    <div>
       <Header/>
       <Navbar galleries={galleries}/>
       <Banner banner={frontPage[0]}/>
-    </main>
+    </div>
   )
 }
 
