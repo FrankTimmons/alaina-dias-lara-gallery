@@ -1,8 +1,12 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import { urlFor } from '../lib/client';
 
 const Banner = ({banner}) => {
   const [style, setStyle] = useState("h-auto w-full opacity-0");
+  
+  useEffect(()=>{
+    setStyle('h-auto w-full animate-imgFadeIn fill-mode-forwards')
+  }, [banner.image])
 
   return (
     <div className='flex flex-col items-center'>

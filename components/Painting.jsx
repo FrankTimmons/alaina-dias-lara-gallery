@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import {urlFor} from '../lib/client'
 
 const Painting = ({painting, onClick}) => {
-  const [style, setStyle] = useState("h-[300px] w-[300px] object-contain opacity-0");
+  const [style, setStyle] = useState("h-[300px] w-[300px] animate-[imgFadeIn_ease_10s] fill-mode-forwards");
   
   useEffect(() => {
     setStyle("h-[300px] w-[300px] object-contain opacity-0")
