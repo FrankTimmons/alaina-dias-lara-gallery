@@ -2,22 +2,22 @@ import Link from 'next/link'
 import React, {useState} from 'react'
 
 const Navbar = ({galleries}) => {
-  const [galleriesDropdown, setGalleriesDropdown] = useState(false)
-
 
   return ( 
-    <div className='flex justify-end border-b-2 border-black mb-10'>
+    <div className='flex justify-end border-b-2 border-black mb-10 '>
       <div className='ml-5'>
-        <h1 onClick={() => setGalleriesDropdown(!galleriesDropdown)} className='hover:text-red-400'>GALLERIES</h1>
-        <div className={galleriesDropdown ? 'absolute flex flex-col bg-slate-300' : 'hidden'}>
-          {galleries.map((gallery) => 
-            <Link href={`/gallery/${gallery.slug.current}`} className='hover:text-red-400'>
-              {gallery.gallery.toUpperCase()}
-            </Link>
-          )}
+        <div className='group'>
+          <h1 className='hover:text-red-400 px-2'>GALLERIES</h1>
+          <div className='hidden group-hover:flex absolute flex-col bg-slate-300 px-2 z-10'>
+            {galleries.map((gallery) => 
+              <Link key={gallery._id} href={`/gallery/${gallery.slug.current}`} className='hover:text-red-400'>
+                {gallery.gallery.toUpperCase()}
+              </Link>
+            )}
+          </div>
         </div>
       </div>
-      <div className='ml-5 hover:text-red-400'>
+      <div className='ml-5 hover:text-red-400 px-2'>
         BLOG
       </div>
     </div>

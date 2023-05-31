@@ -3,9 +3,11 @@ import {urlFor} from '../lib/client'
 
 const Painting = ({painting, onClick}) => {
   const [style, setStyle] = useState("h-[300px] w-[300px] object-contain opacity-0");
+  
   useEffect(() => {
     setStyle("h-[300px] w-[300px] object-contain opacity-0")
   }, [painting]);
+
   return (
     <div
       key={painting.name}
