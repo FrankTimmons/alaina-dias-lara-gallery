@@ -14,7 +14,7 @@ const GalleryDetails = ({ gallery, galleries }) => {
     <>
       <Header />
       <Navbar galleries={galleries} />
-      <div className="mb-10">
+      <div className="py-4">
         <h1 className="text-3xl font-bold">{gallery.gallery.toUpperCase()}</h1>
         <p className="text-xl">{gallery.statement}</p>
       </div>
