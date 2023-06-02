@@ -11,7 +11,7 @@ const Painting = ({painting, onClick}) => {
   return (
     <div
       key={painting.name}
-      className="mt-10 flex flex-col items-center content-center justify-center p-3"
+      className="flex flex-col items-center content-center justify-center p-3"
       onClick={onClick}
     >
       <img

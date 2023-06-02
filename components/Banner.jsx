@@ -9,7 +9,7 @@ const Banner = ({banner}) => {
   }, [banner.image])
 
   return (
-    <div className='flex flex-col items-center'>
+    <div className='flex flex-col items-center py-4'>
       <img onLoad={() => setStyle('h-auto w-full animate-imgFadeIn fill-mode-forwards')} className={style} src={urlFor(banner.image)}/>
       <h1 className='text-center my-10'>
         {banner.quote}

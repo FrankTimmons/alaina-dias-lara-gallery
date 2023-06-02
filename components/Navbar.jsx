@@ -4,7 +4,7 @@ import React, {useState} from 'react'
 const Navbar = ({galleries}) => {
 
   return ( 
-    <div className='flex justify-end border-b-2 border-black mb-10 '>
+    <div className='flex justify-end border-b-2 border-black'>
       <div className='ml-5'>
         <div className='group'>
           <h1 className='hover:text-red-400 px-2'>GALLERIES</h1>
@@ -17,9 +17,9 @@ const Navbar = ({galleries}) => {
           </div>
         </div>
       </div>
-      <div className='ml-5 hover:text-red-400 px-2'>
+      <Link href={`/blog`} className='ml-5 hover:text-red-400 px-2'>
         BLOG
-      </div>
+      </Link>
     </div>
   )
 }
