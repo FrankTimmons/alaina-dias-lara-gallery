@@ -1,6 +1,7 @@
 import React from 'react'
 import {client, urlFor} from '../lib/client'
 import { AiFillCaretRight, AiFillCaretLeft, AiOutlineClose } from "react-icons/ai";
+import ImageFadeIn from "react-image-fade-in";
 
 const GalleryView = ({currentPainting, gallery, closeGalleryView, nextPainting, previousPainting}) => {
   return (
@@ -12,7 +13,7 @@ const GalleryView = ({currentPainting, gallery, closeGalleryView, nextPainting, 
         }  
       </div>
       <div className='w-[90%] h-[90%] flex justify-center'>
-        <img className='object-contain' src={urlFor(gallery.paintings[currentPainting].image)} alt="" />
+        <ImageFadeIn className='object-contain' src={urlFor(gallery.paintings[currentPainting].image)} alt="" />
       </div>
       <div className='fixed right-0 w-[50%] h-full' onClick={currentPainting == (gallery.paintings.length - 1) ? null : nextPainting}>
         {currentPainting == (gallery.paintings.length - 1) ? <></> :
