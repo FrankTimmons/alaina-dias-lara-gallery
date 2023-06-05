@@ -4,9 +4,8 @@ import React from 'react'
 const Header = () => {
   return (
     <Link href={'/'}>
-      <div className='flex flex-col h-100 pt-10 pb-10 font-lobster'>
-        <h1 className='sm:text-6xl text-5xl'>Alaina Dias Lara</h1>
-        <h1 className='sm:text-3xl sm:ml-24 text-2xl ml-12'>Interdisciplinary Artist</h1>
+      <div className='fixed flex z-10 justify-center items-center font-roboto h-[60px] px-4'>
+        <h1 className='sm:text-4xl text-3xl justify-center font-bold'>ALAINA DIAS LARA</h1>
       </div>
     </Link>
   )
