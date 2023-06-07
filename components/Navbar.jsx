@@ -8,7 +8,7 @@ const Navbar = ({galleries}) => {
 
   return ( 
     <>
-      <div className='fixed lg:bg-white/70 bg-white/90 w-full h-[60px] flex justify-between items-center px-4 z-20 font-bold'>
+      <div className='fixed top-0 lg:bg-white/70 bg-white/90 w-full h-[60px] flex justify-between items-center px-4 z-20 font-bold'>
         <div>
           <Link href={`/`} className='text-3xl w-[280px] whitespace-nowrap cursor-pointer'>ALAINA DIAS LARA</Link>
         </div>
