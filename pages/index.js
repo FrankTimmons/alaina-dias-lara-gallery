@@ -6,7 +6,7 @@ import Navbar from '@/components/Navbar';
 
 export default function Home({frontPage, galleries}) {
   return (
-    <div>
+    <div className='block m-auto'>
       <Header/>
       <Navbar galleries={galleries}/>
       <Banner banner={frontPage[0]}/>

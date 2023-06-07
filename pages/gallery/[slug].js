@@ -8,10 +8,9 @@ import Painting from "@/components/Painting";
 const GalleryDetails = ({ gallery, galleries }) => {
   const [galleryView, setGalleryView] = useState(false);
   const [currentPainting, setCurrentPainting] = useState(0);
-  const [rerender, setRerender] = useState(false);
 
   return (
-    <>
+    <div className='block lg:m-auto lg:w-[900px] mx-[5%]'>
       <Header />
       <Navbar galleries={galleries} />
       <div className="py-4">
@@ -21,6 +20,7 @@ const GalleryDetails = ({ gallery, galleries }) => {
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 justify-center bg-stone-200">
         {gallery.paintings.map((painting, index) => (
           <Painting
+            key={painting.name}
             painting={painting}
             onClick={() => {
               setCurrentPainting(index);
@@ -40,7 +40,7 @@ const GalleryDetails = ({ gallery, galleries }) => {
           <></>
         )}
       </div>
-    </>
+    </div>
   );
 };
 
