@@ -17,6 +17,11 @@ export default {
       name: 'quote',
       type: 'text',
       title: 'Quote'
+    },
+    {
+      name: 'author',
+      type: 'string',
+      title: 'Author'
     }
   ]
 }

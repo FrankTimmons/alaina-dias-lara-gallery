@@ -12,9 +12,12 @@ const Banner = ({banner}) => {
           <Logo className='2xl:h-[50%] h-[75%] w-auto'/>
         </div>
         <div className='bg-[#BC693A] w-full h-[5%]'/>
-        <div className='flex justify-center items-center h-[35%]'>
+        <div className='flex flex-col justify-center items-center content-center h-[35%]'>
           <h1 className='w-[60%] font-serif xl:text-2xl lg:text-lg'>
             {parse(banner.quote)}
+          </h1>
+          <h1 className='w-[60%] font-serif xl:text-2xl text-xl text-right mt-6'>
+            - {banner.author}
           </h1>
         </div>
       </div>
@@ -24,9 +27,12 @@ const Banner = ({banner}) => {
           src={urlFor(banner.image)}
         />
       </div>
-      <div className='lg:hidden flex justify-center items-center h-[35%] my-12'>
+      <div className='lg:hidden flex flex-col justify-center items-center h-[35%] my-12'>
         <h1 className='w-[60%] font-serif xl:text-2xl text-xl'>
           {parse(banner.quote)}
+        </h1>
+        <h1 className='w-[60%] font-serif xl:text-2xl text-xl text-right mt-6'>
+          - {banner.author}
         </h1>
       </div>
     </div>
