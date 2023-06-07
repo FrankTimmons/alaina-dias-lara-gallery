@@ -6,18 +6,29 @@ import Logo from '../public/logo.svg'
 
 const Banner = ({banner}) => {
   return (
-    <div className='flex flex-row items-center'>
-      <div className='flex flex-col justify-center items-center gap-24'>
-        <Logo className='h-[90%]'/>
-        <div className='bg-[#BC693A] w-full h-14'/>
-        <h1 className='my-10 w-[60%] font-serif text-xl'>
+    <div className='flex flex-row max-lg:flex-col'>
+      <div className='max-lg:hidden flex flex-col items-center my-[60px]'>
+        <div className='flex justify-center items-center xl:h-[60%] lg:h-[50%]'>
+          <Logo className='2xl:h-[50%] h-[75%] w-auto'/>
+        </div>
+        <div className='bg-[#BC693A] w-full h-[5%]'/>
+        <div className='flex justify-center items-center h-[35%]'>
+          <h1 className='w-[60%] font-serif xl:text-2xl lg:text-lg'>
+            {parse(banner.quote)}
+          </h1>
+        </div>
+      </div>
+      <div className='min-[1150px]:w-[160%]'>
+        <img
+          className='object-contain'
+          src={urlFor(banner.image)}
+        />
+      </div>
+      <div className='lg:hidden flex justify-center items-center h-[35%] my-12'>
+        <h1 className='w-[60%] font-serif xl:text-2xl text-xl'>
           {parse(banner.quote)}
         </h1>
       </div>
-      <img
-        className='h-auto w-[60%]'
-        src={urlFor(banner.image)}
-      />
     </div>
   )
 }
