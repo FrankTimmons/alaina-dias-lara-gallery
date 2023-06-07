@@ -1,13 +1,11 @@
 import React from 'react';
 import { client, urlFor } from '../lib/client';
-import Header from '@/components/Header';
 import Banner from '@/components/Banner';
 import Navbar from '@/components/Navbar';
 
 export default function Home({frontPage, galleries}) {
   return (
     <div className='block m-auto'>
-      <Header/>
       <Navbar galleries={galleries}/>
       <Banner banner={frontPage[0]}/>
     </div>

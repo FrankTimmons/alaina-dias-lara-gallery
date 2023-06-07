@@ -1,6 +1,5 @@
 import React from "react";
 import { client, urlFor } from "../../lib/client";
-import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
 import BlogPost from "@/components/BlogPost";
 
@@ -8,7 +7,6 @@ export default function BlogPosts({ frontPage, galleries, blogPosts }) {
 
   return (
     <div className='block lg:m-auto lg:w-[900px] mx-[5%]'>
-      <Header />
       <Navbar galleries={galleries} />
       {blogPosts.map((post) => (
         <BlogPost post={post} />

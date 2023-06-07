@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { client, urlFor } from "../../lib/client";
-import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
 import GalleryView from "@/components/GalleryView";
 import Painting from "@/components/Painting";
@@ -11,7 +10,6 @@ const GalleryDetails = ({ gallery, galleries }) => {
 
   return (
     <div className='block lg:m-auto lg:w-[900px] mx-[5%]'>
-      <Header />
       <Navbar galleries={galleries} />
       <div className="py-4">
         <h1 className="text-3xl font-bold">{gallery.gallery.toUpperCase()}</h1>
