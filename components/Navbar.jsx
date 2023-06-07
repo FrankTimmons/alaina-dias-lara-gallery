@@ -12,7 +12,7 @@ const Navbar = ({galleries}) => {
         <div>
           <Link href={`/`} className='text-3xl w-[280px] whitespace-nowrap cursor-pointer'>ALAINA DIAS LARA</Link>
         </div>
-        <div className='hidden lg:flex px-4 font-roboto text-xl gap-12'>
+        <div className='hidden lg:flex px-4 font-roboto xl:text-xl lg:text-lg 2xl:gap-24 xl:gap-12 lg:gap-3'>
           <Link href={`/shop`} className='hover:text-blue-800 duration-200 px-2 py-4'>
             ABOUT
           </Link>
