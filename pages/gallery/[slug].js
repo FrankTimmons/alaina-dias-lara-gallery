@@ -3,42 +3,49 @@ import { client, urlFor } from "../../lib/client";
 import Navbar from "@/components/Navbar";
 import GalleryView from "@/components/GalleryView";
 import Painting from "@/components/Painting";
+import ImageFadeIn from "react-image-fade-in";
 
 const GalleryDetails = ({ gallery, galleries }) => {
   const [galleryView, setGalleryView] = useState(false);
   const [currentPainting, setCurrentPainting] = useState(0);
 
   return (
-    <div className='block lg:m-auto lg:w-[900px] mx-[5%]'>
+    <>
       <Navbar galleries={galleries} />
-      <div className="py-4">
-        <h1 className="text-3xl font-bold">{gallery.gallery.toUpperCase()}</h1>
-        <p className="text-xl">{gallery.statement}</p>
+      <ImageFadeIn
+        className='w-full h-[300px] object-cover -z-10'
+        src={urlFor(gallery.paintings[0].image).quality(10)}
+      />
+      <div className="px-4 bg-white">
+        <div>
+          <h1 className="text-5xl font-bold text-center m-12">{gallery.gallery.toUpperCase()}</h1>
+          <p className="text-xl p-6 bg-slate-100">{gallery.statement}</p>
+        </div>
+        <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-2">
+          {gallery.paintings.map((painting, index) => (
+            <Painting
+              key={painting.name}
+              painting={painting}
+              onClick={() => {
+                setCurrentPainting(index);
+                setGalleryView(true);
+              }}
+            />
+          ))}
+          {galleryView ? (
+            <GalleryView
+              gallery={gallery}
+              currentPainting={currentPainting}
+              nextPainting={() => setCurrentPainting(currentPainting + 1)}
+              previousPainting={() => setCurrentPainting(currentPainting - 1)}
+              closeGalleryView={() => setGalleryView(false)}
+            />
+          ) : (
+            <></>
+          )}
+        </div>
       </div>
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 justify-center bg-stone-200">
-        {gallery.paintings.map((painting, index) => (
-          <Painting
-            key={painting.name}
-            painting={painting}
-            onClick={() => {
-              setCurrentPainting(index);
-              setGalleryView(true);
-            }}
-          />
-        ))}
-        {galleryView ? (
-          <GalleryView
-            gallery={gallery}
-            currentPainting={currentPainting}
-            nextPainting={() => setCurrentPainting(currentPainting + 1)}
-            previousPainting={() => setCurrentPainting(currentPainting - 1)}
-            closeGalleryView={() => setGalleryView(false)}
-          />
-        ) : (
-          <></>
-        )}
-      </div>
-    </div>
+    </>
   );
 };
 

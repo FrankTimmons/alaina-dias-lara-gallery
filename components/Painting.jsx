@@ -5,7 +5,7 @@ import ImageFadeIn from "react-image-fade-in";
 const Painting = ({painting, onClick}) => {
   return (
     <div
-      className="flex flex-col items-center content-center justify-center p-3"
+      className="flex flex-col items-center content-center justify-center p-3 font-roboto"
       onClick={onClick}
     >
       <ImageFadeIn 
@@ -13,7 +13,7 @@ const Painting = ({painting, onClick}) => {
         opacityTransition={1.5}
         src={urlFor(painting.image).quality(10)}
       />
-      <p className="text-xl">{painting.name}</p>
+      <p className="text-xl">{painting.name.toUpperCase()}</p>
       <p>{painting.dimensions}</p>
     </div>
   );
