@@ -13,7 +13,7 @@ const Painting = ({painting, onClick}) => {
         opacityTransition={1.5}
         src={urlFor(painting.image).quality(10)}
       />
-      <p className="text-xl">{painting.name.toUpperCase()}</p>
+      <p className="text-xl font-bold">{painting.name.toUpperCase()}</p>
       <p>{painting.dimensions}</p>
     </div>
   );
