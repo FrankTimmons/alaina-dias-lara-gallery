@@ -8,23 +8,13 @@ import ImageFadeIn from "react-image-fade-in";
 const GalleryDetails = ({ gallery, galleries }) => {
   const [galleryView, setGalleryView] = useState(false);
   const [currentPainting, setCurrentPainting] = useState(0);
-  const [bannerPainting, setBannerPainting] = useState(0);
-
-  useEffect(()=>{
-    const randNum = Math.floor(Math.random() * (gallery.paintings.length))
-    setBannerPainting(randNum)
-  }, [])
 
   return (
     <>
       <Navbar galleries={galleries} />
       <ImageFadeIn
-        className='fixed top-0 w-full h-[300px] object-cover -z-10 border-b-2 border-black'
-        src={
-          bannerPainting > gallery.paintings.length - 1 ?
-          urlFor(gallery.paintings[0].image) :
-          urlFor(gallery.paintings[bannerPainting].image)
-        }
+        className='fixed top-0 w-full h-[300px] object-cover -z-10'
+        src={urlFor(gallery.bannerPhoto)}
       />
       <div className="px-4 bg-white mt-[300px]">
         <div>
