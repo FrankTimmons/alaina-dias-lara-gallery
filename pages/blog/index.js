@@ -12,7 +12,7 @@ export default function BlogPosts({ frontPage, galleries, blogPosts }) {
       <ImageFadeIn
         className='w-full h-[300px] object-cover -z-10 border-b-2 border-black'
         src={
-          urlFor(frontPage[0].image).quality(10)
+          urlFor(frontPage[0].image)
         }
       />
       <div className="p-6">
