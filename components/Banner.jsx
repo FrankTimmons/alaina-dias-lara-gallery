@@ -7,9 +7,9 @@ import Logo from '../public/logo.svg'
 const Banner = ({banner}) => {
   return (
     <div className='flex flex-row max-lg:flex-col'>
-      <div className='max-lg:hidden flex flex-col items-center my-[60px]'>
-        <div className='flex justify-center items-center xl:h-[60%] lg:h-[50%]'>
-          <Logo className='2xl:h-[50%] h-[75%] w-auto'/>
+      <div className='max-lg:hidden flex flex-col justify-evenly mt-[60px] lg:w-[412px] xl:w-[600px] 2xl:w-[768px] h-auto'>
+        <div className='flex justify-center items-center xl:h-[60%] lg:h-[50%] lg:w-[412px] xl:w-[600px] 2xl:w-[700px]'>
+          <Logo className='2xl:h-[50%] xl:h-[60%] h-[75%]'/>
         </div>
         <div className='bg-[#BC693A] w-full h-[4%]'/>
         <div className='flex flex-col justify-center items-center content-center h-[35%]'>
@@ -21,7 +21,7 @@ const Banner = ({banner}) => {
           </h1>
         </div>
       </div>
-      <div className='min-[1150px]:w-[150%] '>
+      <div>
         <img
           className='object-contain'
           src={urlFor(banner.image)}

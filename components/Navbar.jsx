@@ -17,10 +17,17 @@ const Navbar = ({galleries}) => {
             ABOUT
           </Link>
           <div className='group'>
-            <h1 className='group-hover:text-blue-800 duration-200 py-4 px-2 cursor-pointer'>GALLERIES</h1>
+            <Link href={`/galleries`}>
+              <h1 className='group-hover:text-blue-800 duration-200 py-4 px-2 cursor-pointer'>GALLERIES</h1>
+            </Link>
             <div className='hidden group-hover:flex absolute flex-col px-2 group-hover:bg-white/70 duration-200'>
               {galleries.map((gallery) => 
-                <Link key={gallery._id} href={`/galleries/${gallery.slug.current}`} className='hover:text-blue-800 duration-200'>
+                <Link 
+                  onClick={() => {window.location.href=`/galleries/${gallery.slug.current}`}} 
+                  key={gallery._id} 
+                  href={`/galleries/${gallery.slug.current}`}     
+                  className='hover:text-blue-800 duration-200'
+                >
                   {gallery.gallery.toUpperCase()}
                 </Link>
               )}
