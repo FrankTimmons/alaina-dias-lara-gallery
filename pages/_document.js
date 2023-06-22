@@ -8,7 +8,7 @@ export default function Document() {
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="styles.css" />
       </Head> 
-      <body className='min-h-screen'>
+      <body>
         <Main />
         <NextScript />
       </body>

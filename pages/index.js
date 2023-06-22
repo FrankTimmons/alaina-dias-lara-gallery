@@ -2,12 +2,14 @@ import React from 'react';
 import { client, urlFor } from '../lib/client';
 import Banner from '@/components/Banner';
 import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 export default function Home({frontPage, galleries}) {
   return (
     <div className='block m-auto'>
       <Navbar galleries={galleries}/>
       <Banner banner={frontPage[0]}/>
+      <Footer/>
     </div>
   )
 }

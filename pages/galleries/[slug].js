@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import GalleryView from "@/components/GalleryView";
 import Painting from "@/components/Painting";
 import ImageFadeIn from "react-image-fade-in";
+import Footer from "@/components/Footer";
 
 const GalleryDetails = ({ gallery, galleries }) => {
   const [galleryView, setGalleryView] = useState(false);
@@ -16,7 +17,7 @@ const GalleryDetails = ({ gallery, galleries }) => {
         className='fixed top-0 w-full h-[300px] object-cover -z-10'
         src={urlFor(gallery.bannerPhoto)}
       />
-      <div className="px-4 bg-white mt-[300px]">
+      <div className="px-4 bg-white mt-[300px] min-h-screen">
         <div>
           <h1 className="text-5xl font-bold text-center py-12">{gallery.gallery.toUpperCase()}</h1>
           <p className="text-xl p-6 bg-slate-100">{gallery.statement}</p>
@@ -45,6 +46,7 @@ const GalleryDetails = ({ gallery, galleries }) => {
           )}
         </div>
       </div>
+      <Footer/>
     </>
   );
 };

@@ -3,6 +3,7 @@ import { client, urlFor } from "../../lib/client";
 import Navbar from "@/components/Navbar";
 import BlogPost from "@/components/BlogPost";
 import ImageFadeIn from "react-image-fade-in";
+import Footer from "@/components/Footer";
 
 export default function BlogPosts({ frontPage, galleries, blogPosts }) {
 
@@ -10,7 +11,7 @@ export default function BlogPosts({ frontPage, galleries, blogPosts }) {
     <>
       <Navbar galleries={galleries} />
       <ImageFadeIn
-        className='w-full h-[300px] object-cover -z-10 border-b-2 border-black'
+        className='w-full h-[300px] object-cover -z-10'
         src={
           urlFor(frontPage[0].image)
         }
@@ -21,6 +22,7 @@ export default function BlogPosts({ frontPage, galleries, blogPosts }) {
           <BlogPost post={post} />
         ))}
       </div>
+      <Footer/>
     </>
   );
 }
