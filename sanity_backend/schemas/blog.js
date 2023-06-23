@@ -15,8 +15,19 @@ export default {
     },
     {
       name: 'post',
-      type: 'text',
-      title: 'Post'
+      title: 'Post',
+      type: 'array',
+      of: [
+        {
+          type: 'block',
+          marks: {
+            decorators: [
+              { title: 'Strong', value: 'strong' },
+              { title: 'Emphasis', value: 'em' }
+            ]
+          }
+        }
+      ]
     },
     {
       name: 'pictures',
