@@ -58,21 +58,21 @@ const Navbar = ({galleries}) => {
               : "lg:hidden fixed top-0 left-0 w-full h-[calc(100vh-60px)] my-[60px] bg-white/90 flex flex-col justify-center items-center"
           }
         >
-          <li className="py-6 text-4xl font-bold hover:text-blue-800 duration-200">
+          <Link href={`/`} className="py-6 text-4xl font-bold hover:text-blue-800 duration-200">
             HOME
-          </li>
-          <li className="py-6 text-4xl font-bold hover:text-blue-800 duration-200">
+          </Link>
+          <Link href={`/about`} className="py-6 text-4xl font-bold hover:text-blue-800 duration-200">
             ABOUT
-          </li>
-          <li className="py-6 text-4xl font-bold hover:text-blue-800 duration-200">
+          </Link>
+          <Link href={`/galleries`} className="py-6 text-4xl font-bold hover:text-blue-800 duration-200">
             GALLERIES
-          </li>
-          <li className="py-6 text-4xl font-bold hover:text-blue-800 duration-200">
+          </Link>
+          <Link href={`/shop`} className="py-6 text-4xl font-bold hover:text-blue-800 duration-200">
             SHOP
-          </li>
-          <li className="py-6 text-4xl font-bold hover:text-blue-800 duration-200">
+          </Link>
+          <Link href={`/blog`} className="py-6 text-4xl font-bold hover:text-blue-800 duration-200">
             BLOG
-          </li>
+          </Link>
         </ul>
       </div>
     </>

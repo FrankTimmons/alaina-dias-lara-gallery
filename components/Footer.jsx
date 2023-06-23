@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 const Footer = () => {
   return (
@@ -6,21 +7,18 @@ const Footer = () => {
       <div className='w-full h-auto bg-zinc-900 flex-row justify-around flex py-6'>
         <div className='flex flex-col text-white font-serif text-center gap-6'>
           <p>__</p>
-          <p>BLOG</p>
-          <p>GALLERIES</p>
-          <p>SHOP</p>
+          <Link href={`/galleries`}>GALLERIES</Link>
+          <Link href={`/shop`}>SHOP</Link>
         </div>
         <div className='flex flex-col text-white font-serif text-center gap-6'>
           <p>__</p>
-          <p>CONTACT</p>
-          <p>ABOUT</p>
-          <p>SHOP</p>
+          <Link href={`/contact`}>CONTACT</Link>
+          <Link href={`/about`}>ABOUT</Link>
         </div>
         <div className='flex flex-col text-white font-serif text-center gap-6'>
           <p>__</p>
-          <p>FACEBOOK</p>
-          <p>GALLERIES</p>
-          <p>SHOP</p>
+          <Link href={`/`}>FACEBOOK</Link>
+          <Link href={`/blog`}>BLOG</Link>
         </div>
       </div>
       <div className='w-full h-auto bg-zinc-800 flex p-2 justify-end'>
