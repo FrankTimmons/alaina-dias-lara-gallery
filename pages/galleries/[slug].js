@@ -17,7 +17,7 @@ const GalleryDetails = ({ gallery, galleries }) => {
         className='fixed top-0 w-full h-[300px] object-cover -z-10'
         src={urlFor(gallery.bannerPhoto)}
       />
-      <div className="px-4 bg-white mt-[300px] min-h-screen">
+      <div className="px-4 bg-white mt-[300px] min-h-screen pb-6">
         <div>
           <h1 className="text-5xl font-bold text-center py-12">{gallery.gallery.toUpperCase()}</h1>
           <p className="text-xl p-6 bg-slate-100">{gallery.statement}</p>
