@@ -15,8 +15,21 @@ export default {
     },
     {
       name: 'quote',
-      type: 'text',
-      title: 'Quote'
+      title: 'Quote',
+      type: 'array',
+      of: [
+        {
+          type: 'block',
+          marks: {
+            decorators: [
+              { title: 'Strong', value: 'strong' },
+              { title: 'Emphasis', value: 'em' },
+              { title: 'Code', value: 'code' },
+              { title: 'Highlight', value: 'highlight' }
+            ]
+          }
+        }
+      ]
     },
     {
       name: 'author',

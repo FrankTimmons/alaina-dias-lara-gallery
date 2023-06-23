@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react'
-import { urlFor } from '../lib/client';
+import { urlFor, serializers } from '../lib/client';
 import parse from 'html-react-parser';
 import ImageFadeIn from "react-image-fade-in";
 import Logo from '../public/logo.svg'
+import BlockContent from "@sanity/block-content-to-react";
 
 const Banner = ({banner}) => {
   return (
@@ -13,9 +14,13 @@ const Banner = ({banner}) => {
         </div>
         <div className='bg-[#BC693A] w-full h-[4%]'/>
         <div className='flex flex-col justify-center items-center content-center h-[35%]'>
-          <h1 className='w-[60%] font-serif xl:text-2xl lg:text-lg'>
-            {parse(banner.quote)}
-          </h1>
+            <BlockContent
+              className='w-[60%] font-serif xl:text-2xl lg:text-lg'
+              blocks={banner.quote}
+              serializers={serializers}
+              projectId={"3a3zvinb"}
+              dataset={"production"}
+            />
           <h1 className='w-[60%] font-serif xl:text-2xl lg:text-lg text-right mt-5'>
             - {banner.author}
           </h1>
@@ -28,9 +33,13 @@ const Banner = ({banner}) => {
         />
       </div>
       <div className='lg:hidden flex flex-col justify-center items-center h-[35%] my-12'>
-        <h1 className='w-[60%] font-serif text-xl'>
-          {parse(banner.quote)}
-        </h1>
+        <BlockContent 
+          className='w-[60%] font-serif text-xl'
+          blocks={banner.quote}
+          serializers={serializers}
+          projectId={"3a3zvinb"}
+          dataset={"production"}
+        />
         <h1 className='w-[60%] font-serif text-xl text-right mt-6'>
           - {banner.author}
         </h1>
