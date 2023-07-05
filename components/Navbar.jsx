@@ -8,19 +8,19 @@ const Navbar = ({galleries}) => {
 
   return ( 
     <>
-      <div className='fixed top-0 lg:bg-white/70 bg-white/90 w-full h-[60px] flex justify-between items-center px-4 z-20 font-bold'>
+      <div className='fixed top-0 lg:bg-white/80 bg-white/90 w-full h-[60px] flex justify-between items-center px-4 z-20 font-bold'>
         <div>
           <Link href={`/`} className='text-2xl w-[280px] whitespace-nowrap cursor-pointer'>ALAINA DIAS LARA</Link>
         </div>
         <div className='hidden lg:flex px-4 font-roboto xl:text-xl lg:text-lg 2xl:gap-24 xl:gap-12 lg:gap-3'>
-          <Link href={`/shop`} className='hover:text-blue-800 duration-200 px-2 py-4'>
+          <Link href={`/about`} className='hover:text-blue-800 duration-200 px-2 py-4'>
             ABOUT
           </Link>
           <div className='group'>
             <Link href={`/galleries`}>
               <h1 className='group-hover:text-blue-800 duration-200 py-4 px-2 cursor-pointer'>GALLERIES</h1>
             </Link>
-            <div className='hidden group-hover:flex absolute flex-col px-2 group-hover:bg-white/70 duration-200'>
+            <div className='hidden group-hover:flex absolute flex-col px-2 group-hover:bg-white/80 duration-200'>
               {galleries.map((gallery) => 
                 <Link 
                   onClick={() => {window.location.href=`/galleries/${gallery.slug.current}`}} 
