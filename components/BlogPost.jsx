@@ -11,7 +11,7 @@ const BlogPost = ({post}) => {
     <div className='flex flex-col py-4 bg-slate-100 p-6 m-6'>
       <div className='text-3xl font-bold text-black'>{post.title}</div>
       <div className='text-xl text-gray-400 mb-3'>{post.date}</div>
-      <div>
+      <div className='text-xl'>
         {post.pictures ?
           <div className='w-[400px] h-[400px] float-right ml-4 mb-4'>
             <ImageFadeIn
@@ -35,7 +35,7 @@ const BlogPost = ({post}) => {
           <></>
         }
           <BlockContent
-            className='text-xl'
+            className='text-2xl'
             blocks={post.post}
             serializers={serializers}
             projectId={"3a3zvinb"}
