@@ -1,5 +1,6 @@
 import frontPage from './frontpage'
 import galleries from './galleries'
 import blogPosts from './blog'
+import products from './products'
 
-export const schemaTypes = [frontPage, galleries, blogPosts]
+export const schemaTypes = [frontPage, galleries, blogPosts, products]
