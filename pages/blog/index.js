@@ -11,13 +11,15 @@ export default function BlogPosts({ frontPage, galleries, blogPosts }) {
     <>
       <Navbar galleries={galleries} />
       <ImageFadeIn
-        className='w-full h-[300px] object-cover -z-10'
+        className='fixed top-0 w-full h-[300px] object-cover -z-10'
         src={
           urlFor(frontPage[0].image)
         }
       />
-      <div className="p-6">
-        <h1 className="text-5xl font-bold text-center py-12">BLOG</h1>
+      <div className="fixed top-[125px] text-center inset-x-0 -z-10 bg-white/80 mx-auto w-fit">
+        <h1 className="text-5xl font-bold text-center p-6">BLOG</h1> 
+      </div>
+      <div className="px-4 bg-white mt-[300px] min-h-screen py-6">
         {blogPosts.map((post) => (
           <BlogPost post={post} />
         ))}

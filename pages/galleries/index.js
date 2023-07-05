@@ -13,10 +13,10 @@ const Galleries = ({frontPage, galleries}) => {
         className='fixed top-0 w-full h-[300px] object-cover -z-10'
         src={urlFor(frontPage[0].image)}
       />
-      <div className="px-4 bg-white mt-[300px] min-h-screen pb-6">
-        <div>
-          <h1 className="text-5xl font-bold text-center py-12">GALLERIES</h1>
-        </div>
+      <div className="fixed top-[125px] text-center inset-x-0 -z-10 bg-white/80 mx-auto w-fit">
+        <h1 className="text-5xl font-bold text-center p-6">GALLERIES</h1> 
+      </div>
+      <div className="px-4 bg-white mt-[300px] min-h-screen py-6">
         <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-2">
           {galleries.map((gallery, index) => (
             <div
