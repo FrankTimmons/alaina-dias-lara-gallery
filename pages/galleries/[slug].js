@@ -17,7 +17,7 @@ const GalleryDetails = ({ gallery, galleries }) => {
         className='fixed top-0 w-full h-[300px] object-cover -z-10'
         src={urlFor(gallery.bannerPhoto)}
       />
-      <div className="fixed top-[125px] text-center inset-x-0 -z-10 bg-white/80 mx-auto w-fit">
+      <div className="absolute top-[125px] text-center inset-x-0 -z-10 bg-white/80 mx-auto w-fit">
         <h1 className="text-5xl font-bold text-center p-6">{gallery.gallery.toUpperCase()}</h1> 
       </div>
       <div className="px-4 bg-white mt-[300px] min-h-screen py-6">
@@ -25,7 +25,7 @@ const GalleryDetails = ({ gallery, galleries }) => {
           <h1 className="text-5xl font-bold text-center py-12">{gallery.gallery.toUpperCase()}</h1>
           <p className="text-xl p-6 bg-slate-100">{gallery.statement}</p>
         </div> */}
-        <p className="text-xl p-6 bg-slate-100">{gallery.statement}</p>
+        <p className="text-xl p-6 bg-slate-100 mb-3">{gallery.statement}</p>
         <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-2">
           {gallery.paintings.map((painting, index) => (
             <Painting
