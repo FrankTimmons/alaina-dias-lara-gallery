@@ -19,8 +19,19 @@ export default {
     },
     {
       name: 'description',
-      type: 'text',
-      title: 'Description'
+      title: 'Description',
+      type: 'array',
+      of: [
+        {
+          type: 'block',
+          marks: {
+            decorators: [
+              { title: 'Strong', value: 'strong' },
+              { title: 'Emphasis', value: 'em' }
+            ]
+          }
+        }
+      ]
     },
     {
       name: 'price',
@@ -31,6 +42,11 @@ export default {
       name: 'priceId',
       type: 'string',
       title: 'Stripe Price Id'
+    },
+    {
+      name: 'paymentLink',
+      type: 'string',
+      title: 'Stripe Payment Link'
     },
     {
       name: 'images',

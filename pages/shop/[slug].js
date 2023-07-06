@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { client, urlFor } from "../../lib/client";
+import { client, urlFor, serializers } from "../../lib/client";
 import Navbar from "@/components/Navbar";
 import ImageFadeIn from "react-image-fade-in";
 import Footer from "@/components/Footer";
+import BlockContent from '@sanity/block-content-to-react'
+import Link from "next/link";
 
 const ProductDetails = ({ product, products, galleries }) => {
+  const [pictureIndex, setPictureIndex] = useState(0)
 
   return (
     <>
@@ -13,19 +16,49 @@ const ProductDetails = ({ product, products, galleries }) => {
         className='fixed top-0 w-full h-[300px] object-cover -z-10'
         src={urlFor(product.images[0])}
       />
-      <div className="fixed top-[125px] text-center inset-x-0 -z-10 bg-white/80 mx-auto w-fit">
+      <div className="absolute top-[125px] text-center inset-x-0 -z-10 bg-white/80 mx-auto w-fit">
         <h1 className="text-5xl font-bold text-center p-6">{product.product.toUpperCase()}</h1> 
       </div>
       <div className="px-4 bg-white mt-[300px] min-h-screen py-6">
-        {/* <div>
-          <h1 className="text-5xl font-bold text-center py-12">{gallery.gallery.toUpperCase()}</h1>
-          <p className="text-xl p-6 bg-slate-100">{gallery.statement}</p>
-        </div> */}
-        <p className="text-xl p-6 bg-slate-100">{product.description}</p>
-        <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-2">
-          {product.images.map((images, index) => (
-            <></>
-          ))}
+        <div className='flex sm:flex-row flex-col sm:items-center sm:gap-6 gap-3 bg-slate-100 p-6 mx-auto mt-6'>
+          <div className='flex items-center flex-col sm:w-[600px] sm:h-[700px] w-auto h-auto'>
+            <ImageFadeIn
+              className='object-contain sm:w-[600px] sm:h-[600px] w-[auto] h-[400px]'
+              opacityTransition={1.5}
+              src={urlFor(product.images[pictureIndex]).quality(10)}
+            />
+            <div className='flex flex-row justify-center gap-3'>
+              {product.images.map((image, index) => 
+                <div className='w-[75px] h-[75px] m-2 cursor-pointer '>
+                  <ImageFadeIn
+                    className='object-cover w-[75px] h-[75px] hover:border-blue-800 border-2 duration-200'
+                    onClick={() => setPictureIndex(index)}
+                    opacityTransition={1.5}
+                    src={urlFor(image).quality(10)}
+                  /> 
+                </div>
+              )}
+            </div>
+          </div>
+          <div className="sm:h-[300px] h-auto flex flex-col gap-3 justify-between text-xl">
+            <div>
+              <p className='text-3xl font-bold text-black'>{product.product}</p>
+              <p className='text-xl text-gray-400'>${product.price}</p>
+            </div>
+            <BlockContent
+              blocks={product.description}
+              serializers={serializers}
+              projectId={"3a3zvinb"}
+              dataset={"production"}
+            />
+            <Link 
+              type="button" 
+              className="text-xl rounded-md bg-blue-800 text-white p-4 font-bold w-fit hover:bg-white hover:text-blue-800 border-blue-800 border-2 duration-200" 
+              href={product.paymentLink}
+            >
+              BUY NOW
+            </Link>
+          </div>
         </div>
       </div>
       <Footer/>
