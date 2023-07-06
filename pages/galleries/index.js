@@ -20,14 +20,15 @@ const Galleries = ({frontPage, galleries}) => {
         <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-2">
           {galleries.map((gallery, index) => (
             <div
-              className="flex flex-col items-center content-center justify-center p-3 font-roboto hover:scale-105 duration-300"
+              className="flex flex-col items-center content-center justify-center p-3 font-roboto hover:scale-[1.02] duration-300 group"
             >
               <ImageFadeIn
                 className='h-[300px] w-[300px] 2xl:h-[400px] 2xl:w-[400px] object-contain cursor-pointer p-3'
                 src={urlFor(gallery.bannerPhoto)}
                 onClick={() => {window.location.href=`/galleries/${gallery.slug.current}`}} 
               />
-              <p className="text-xl font-bold">{gallery.gallery.toUpperCase()}</p>
+              <p className="text-xl font-bold group-hover:underline">{gallery.gallery.toUpperCase()}</p>
+              <p className="text-sm font-bold text-gray-600">{gallery.paintings.length} PAINTING(S)</p>
             </div>
           ))}
         </div>

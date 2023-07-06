@@ -46,7 +46,7 @@ const Navbar = ({galleries}) => {
         </div>
 
         <div className='w-[280px] lg:flex hidden justify-end'>
-          <Link href={`/contact`} className='border-black border-2 p-2 bg-white'>
+          <Link href={`/contact`} className='border-black border-2 p-2 bg-white hover:bg-black hover:text-white duration-200'>
             CONTACT
           </Link>
         </div>
