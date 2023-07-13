@@ -14,10 +14,10 @@ const ProductDetails = ({ product, products, galleries }) => {
       <Navbar galleries={galleries} />
       <ImageFadeIn
         className='fixed top-0 w-full h-[300px] object-cover -z-10'
-        src={urlFor(product.images[0])}
+        src={urlFor(product?.images[0])}
       />
       <div className="absolute top-[125px] text-center inset-x-0 -z-10 bg-white/80 mx-auto w-fit">
-        <h1 className="text-5xl font-bold text-center p-6">{product.product.toUpperCase()}</h1> 
+        <h1 className="text-5xl font-bold text-center p-6">{product?.product.toUpperCase()}</h1> 
       </div>
       <div className="px-4 bg-white mt-[300px] min-h-screen py-6">
         <div className='flex sm:flex-row flex-col sm:items-center sm:gap-6 gap-3 bg-slate-100 p-6 mx-auto mt-6 w-2/3'>
@@ -28,7 +28,7 @@ const ProductDetails = ({ product, products, galleries }) => {
               src={urlFor(product.images[pictureIndex]).quality(10)}
             />
             <div className='flex flex-row justify-center gap-3'>
-              {product.images.map((image, index) => 
+              {product?.images.map((image, index) => 
                 <div key={index} className='w-[75px] h-[75px] m-2 cursor-pointer '>
                   <ImageFadeIn
                     className='object-cover w-[75px] h-[75px] hover:border-blue-800 border-2 duration-200'
@@ -42,11 +42,11 @@ const ProductDetails = ({ product, products, galleries }) => {
           </div>
           <div className="h-auto flex flex-col gap-6 justify-between text-xl">
             <div>
-              <p className='text-3xl font-bold text-black'>{product.product}</p>
-              <p className='text-xl text-blue-800'>${product.price}</p>
+              <p className='text-3xl font-bold text-black'>{product?.product}</p>
+              <p className='text-xl text-blue-800'>${product?.price}</p>
             </div>
             <BlockContent
-              blocks={product.description}
+              blocks={product?.description}
               serializers={serializers}
               projectId={"3a3zvinb"}
               dataset={"production"}
@@ -54,7 +54,7 @@ const ProductDetails = ({ product, products, galleries }) => {
             <Link 
               type="button" 
               className="text-xl rounded-md bg-blue-800 text-white p-4 font-bold w-fit hover:bg-white hover:text-blue-800 border-blue-800 border-2 duration-200 mb-[100px]" 
-              href={product.paymentLink}
+              href={product?.paymentLink}
             >
               BUY NOW
             </Link>
