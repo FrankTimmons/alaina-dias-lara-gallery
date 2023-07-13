@@ -1,4 +1,4 @@
-import React, { useState, useEffect, memo } from "react";
+import React, { useState, useEffect } from "react";
 import { client, urlFor, serializers } from "../../lib/client";
 import Navbar from "@/components/Navbar";
 import ImageFadeIn from "react-image-fade-in";
@@ -6,13 +6,13 @@ import Footer from "@/components/Footer";
 import BlockContent from '@sanity/block-content-to-react'
 import Link from "next/link";
 
-const ProductDetails = memo( function ProductDetails({ product, products, galleries })  {
+const ProductDetails = ({ product, products, galleries }) => {
   const [pictureIndex, setPictureIndex] = useState(0)
 
   return (
     <>
       <Navbar galleries={galleries} />
-      <img
+      <ImageFadeIn
         className='fixed top-0 w-full h-[300px] object-cover -z-10'
         src={urlFor(product?.images[0])}
       />
@@ -64,30 +64,30 @@ const ProductDetails = memo( function ProductDetails({ product, products, galler
       <Footer/>
     </>
   );
-});
-
-export const getStaticPaths = async () => {
-  const query = `*[_type == "products"] {
-    slug {
-      current
-    }
-  }`;
-
-  const products = await client.fetch(query);
-
-  const paths = products.map((product) => ({
-    params: {
-      slug: product.slug.current,
-    },
-  }));
-
-  return {
-    paths,
-    fallback: "blocking",
-  };
 };
 
-export const getStaticProps = async ({ params: { slug } }) => {
+// export const getStaticPaths = async () => {
+//   const query = `*[_type == "products"] {
+//     slug {
+//       current
+//     }
+//   }`;
+
+//   const products = await client.fetch(query);
+
+//   const paths = products.map((product) => ({
+//     params: {
+//       slug: product.slug.current,
+//     },
+//   }));
+
+//   return {
+//     paths,
+//     fallback: true,
+//   };
+// };
+
+export const getServerSideProps = async ({ params: { slug } }) => {
   const product = await client.fetch(
     `*[_type == "products" && slug.current == '${slug}'][0]`
   );

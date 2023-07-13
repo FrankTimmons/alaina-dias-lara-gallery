@@ -1,20 +1,19 @@
-import React, { useState, useEffect, memo } from "react";
+import React, { useState, useEffect } from "react";
 import { client, urlFor } from "../../lib/client";
 import Navbar from "@/components/Navbar";
 import GalleryView from "@/components/GalleryView";
 import Painting from "@/components/Painting";
 import ImageFadeIn from "react-image-fade-in";
 import Footer from "@/components/Footer";
-import Image from "next/image";
 
-const GalleryDetails = memo( function GalleryDetails({ gallery, galleries })  {
+const GalleryDetails = ({ gallery, galleries }) => {
   const [galleryView, setGalleryView] = useState(false);
   const [currentPainting, setCurrentPainting] = useState(0);
 
   return (
     <>
       <Navbar galleries={galleries} />
-      <img
+      <ImageFadeIn
         className='fixed top-0 w-full h-[300px] object-cover -z-10'
         src={urlFor(gallery?.bannerPhoto)}
       />
@@ -54,30 +53,30 @@ const GalleryDetails = memo( function GalleryDetails({ gallery, galleries })  {
       <Footer/>
     </>
   );
-});
-
-export const getStaticPaths = async () => {
-  const query = `*[_type == "galleries"] {
-    slug {
-      current
-    }
-  }`;
-
-  const galleries = await client.fetch(query);
-
-  const paths = galleries.map((gallery) => ({
-    params: {
-      slug: gallery.slug.current,
-    },
-  }));
-
-  return {
-    paths,
-    fallback: "blocking",
-  };
 };
 
-export const getStaticProps = async ({ params: { slug } }) => {
+// export const getStaticPaths = async () => {
+//   const query = `*[_type == "galleries"] {
+//     slug {
+//       current
+//     }
+//   }`;
+
+//   const galleries = await client.fetch(query);
+
+//   const paths = galleries.map((gallery) => ({
+//     params: {
+//       slug: gallery.slug.current,
+//     },
+//   }));
+
+//   return {
+//     paths,
+//     fallback: true,
+//   };
+// };
+
+export const getServerSideProps = async ({ params: { slug } }) => {
   const gallery = await client.fetch(
     `*[_type == "galleries" && slug.current == '${slug}'][0]`
   );
