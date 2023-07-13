@@ -20,8 +20,8 @@ export default function BlogPosts({ frontPage, galleries, blogPosts }) {
         <h1 className="text-5xl font-bold text-center p-6">BLOG</h1> 
       </div>
       <div className="px-4 bg-white mt-[300px] min-h-screen py-6">
-        {blogPosts.map((post) => (
-          <BlogPost post={post} />
+        {blogPosts.map((post, index) => (
+          <BlogPost key={index} post={post} />
         ))}
       </div>
       <Footer/>

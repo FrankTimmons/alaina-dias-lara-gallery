@@ -29,7 +29,7 @@ const ProductDetails = ({ product, products, galleries }) => {
             />
             <div className='flex flex-row justify-center gap-3'>
               {product.images.map((image, index) => 
-                <div className='w-[75px] h-[75px] m-2 cursor-pointer '>
+                <div key={index} className='w-[75px] h-[75px] m-2 cursor-pointer '>
                   <ImageFadeIn
                     className='object-cover w-[75px] h-[75px] hover:border-blue-800 border-2 duration-200'
                     onClick={() => setPictureIndex(index)}

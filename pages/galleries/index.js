@@ -20,6 +20,7 @@ const Galleries = ({frontPage, galleries}) => {
         <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-2">
           {galleries.map((gallery, index) => (
             <div
+              key={index}
               className="flex flex-col items-center content-center justify-center p-3 font-roboto hover:scale-[1.02] duration-300 group"
             >
               <ImageFadeIn
