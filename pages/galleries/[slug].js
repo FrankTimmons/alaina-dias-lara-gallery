@@ -5,6 +5,7 @@ import GalleryView from "@/components/GalleryView";
 import Painting from "@/components/Painting";
 import ImageFadeIn from "react-image-fade-in";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 
 const GalleryDetails = ({ gallery, galleries }) => {
   const [galleryView, setGalleryView] = useState(false);
@@ -13,7 +14,7 @@ const GalleryDetails = ({ gallery, galleries }) => {
   return (
     <>
       <Navbar galleries={galleries} />
-      <ImageFadeIn
+      <Image
         className='fixed top-0 w-full h-[300px] object-cover -z-10'
         src={urlFor(gallery?.bannerPhoto)}
       />
@@ -72,7 +73,7 @@ export const getStaticPaths = async () => {
 
   return {
     paths,
-    fallback: true,
+    fallback: "blocking",
   };
 };
 

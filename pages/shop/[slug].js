@@ -12,7 +12,7 @@ const ProductDetails = ({ product, products, galleries }) => {
   return (
     <>
       <Navbar galleries={galleries} />
-      <ImageFadeIn
+      <Image
         className='fixed top-0 w-full h-[300px] object-cover -z-10'
         src={urlFor(product?.images[0])}
       />
@@ -83,7 +83,7 @@ export const getStaticPaths = async () => {
 
   return {
     paths,
-    fallback: true,
+    fallback: "blocking",
   };
 };
 
