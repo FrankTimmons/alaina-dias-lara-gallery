@@ -14,7 +14,7 @@ const GalleryDetails = ({ gallery, galleries }) => {
   return (
     <>
       <Navbar galleries={galleries} />
-      <Image
+      <img
         className='fixed top-0 w-full h-[300px] object-cover -z-10'
         src={urlFor(gallery?.bannerPhoto)}
       />
