@@ -25,7 +25,7 @@ const Shop = ({frontPage, galleries, products}) => {
             >
               <ImageFadeIn
                 className='h-[300px] w-[300px] 2xl:h-[400px] 2xl:w-[400px] object-contain cursor-pointer p-3'
-                src={urlFor(product.images[0])}
+                src={urlFor(product.images[0]).quality(10)}
                 onClick={() => {window.location.href=`/shop/${product.slug.current}`}} 
               />
               <p className="text-2xl font-bold group-hover:underline">{product.product.toUpperCase()}</p>

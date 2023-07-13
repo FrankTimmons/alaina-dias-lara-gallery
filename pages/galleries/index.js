@@ -25,7 +25,7 @@ const Galleries = ({frontPage, galleries}) => {
             >
               <ImageFadeIn
                 className='h-[300px] w-[300px] 2xl:h-[400px] 2xl:w-[400px] object-contain cursor-pointer p-3'
-                src={urlFor(gallery.bannerPhoto)}
+                src={urlFor(gallery.bannerPhoto).quality(10)}
                 onClick={() => {window.location.href=`/galleries/${gallery.slug.current}`}} 
               />
               <p className="text-xl font-bold group-hover:underline">{gallery.gallery.toUpperCase()}</p>

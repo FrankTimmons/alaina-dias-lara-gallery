@@ -34,7 +34,7 @@ const ProductDetails = ({ product, products, galleries }) => {
                     className='object-cover w-[75px] h-[75px] hover:border-blue-800 border-2 duration-200'
                     onClick={() => setPictureIndex(index)}
                     opacityTransition={1.5}
-                    src={urlFor(image).quality(10)}
+                    src={urlFor(image).quality(5)}
                   /> 
                 </div>
               )}
