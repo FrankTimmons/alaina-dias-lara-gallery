@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, memo } from "react";
 import { client, urlFor } from "../../lib/client";
 import Navbar from "@/components/Navbar";
 import GalleryView from "@/components/GalleryView";
