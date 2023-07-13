@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import {AiFillLinkedin} from 'react-icons/ai'
+import {AiFillLinkedin, AiFillGithub} from 'react-icons/ai'
 
 
 const Footer = () => {
@@ -27,6 +27,9 @@ const Footer = () => {
         <p className='text-white text-sm'>Website Created by Frank Timmons</p>
         <Link href="https://www.linkedin.com/in/frank-timmons-pdx/">
           <AiFillLinkedin className='text-white text-lg ml-2'/>
+        </Link>
+        <Link href="https://github.com/FrankTimmons">
+          <AiFillGithub className='text-white text-lg ml-2'/>
         </Link>
       </div>
     </>

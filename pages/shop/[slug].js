@@ -20,7 +20,7 @@ const ProductDetails = ({ product, products, galleries }) => {
         <h1 className="text-5xl font-bold text-center p-6">{product.product.toUpperCase()}</h1> 
       </div>
       <div className="px-4 bg-white mt-[300px] min-h-screen py-6">
-        <div className='flex sm:flex-row flex-col sm:items-center sm:gap-6 gap-3 bg-slate-100 p-6 mx-auto mt-6'>
+        <div className='flex sm:flex-row flex-col sm:items-center sm:gap-6 gap-3 bg-slate-100 p-6 mx-auto mt-6 w-2/3'>
           <div className='flex items-center flex-col sm:w-[600px] sm:h-[700px] w-auto h-auto'>
             <ImageFadeIn
               className='object-contain sm:w-[600px] sm:h-[600px] w-[auto] h-[400px]'
@@ -40,10 +40,10 @@ const ProductDetails = ({ product, products, galleries }) => {
               )}
             </div>
           </div>
-          <div className="sm:h-[300px] h-auto flex flex-col gap-3 justify-between text-xl">
+          <div className="h-auto flex flex-col gap-6 justify-between text-xl">
             <div>
               <p className='text-3xl font-bold text-black'>{product.product}</p>
-              <p className='text-xl text-gray-400'>${product.price}</p>
+              <p className='text-xl text-blue-800'>${product.price}</p>
             </div>
             <BlockContent
               blocks={product.description}
@@ -53,7 +53,7 @@ const ProductDetails = ({ product, products, galleries }) => {
             />
             <Link 
               type="button" 
-              className="text-xl rounded-md bg-blue-800 text-white p-4 font-bold w-fit hover:bg-white hover:text-blue-800 border-blue-800 border-2 duration-200" 
+              className="text-xl rounded-md bg-blue-800 text-white p-4 font-bold w-fit hover:bg-white hover:text-blue-800 border-blue-800 border-2 duration-200 mb-[100px]" 
               href={product.paymentLink}
             >
               BUY NOW
