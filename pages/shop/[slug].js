@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, memo } from "react";
 import { client, urlFor, serializers } from "../../lib/client";
 import Navbar from "@/components/Navbar";
 import ImageFadeIn from "react-image-fade-in";
@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import BlockContent from '@sanity/block-content-to-react'
 import Link from "next/link";
 
-const ProductDetails = ({ product, products, galleries }) => {
+const ProductDetails = memo( function ProductDetails({ product, products, galleries })  {
   const [pictureIndex, setPictureIndex] = useState(0)
 
   return (
@@ -64,7 +64,7 @@ const ProductDetails = ({ product, products, galleries }) => {
       <Footer/>
     </>
   );
-};
+});
 
 export const getStaticPaths = async () => {
   const query = `*[_type == "products"] {

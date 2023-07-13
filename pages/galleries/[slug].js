@@ -7,7 +7,7 @@ import ImageFadeIn from "react-image-fade-in";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 
-const GalleryDetails = ({ gallery, galleries }) => {
+const GalleryDetails = memo( function GalleryDetails({ gallery, galleries })  {
   const [galleryView, setGalleryView] = useState(false);
   const [currentPainting, setCurrentPainting] = useState(0);
 
@@ -54,7 +54,7 @@ const GalleryDetails = ({ gallery, galleries }) => {
       <Footer/>
     </>
   );
-};
+});
 
 export const getStaticPaths = async () => {
   const query = `*[_type == "galleries"] {
