@@ -25,7 +25,7 @@ const ProductDetails = ({ product, products, galleries }) => {
             <ImageFadeIn
               className='object-contain sm:w-[600px] sm:h-[600px] w-[auto] h-[400px]'
               opacityTransition={1.5}
-              src={urlFor(product.images[pictureIndex]).quality(10)}
+              src={urlFor(product?.images[pictureIndex]).quality(10)}
             />
             <div className='flex flex-row justify-center gap-3'>
               {product?.images.map((image, index) => 
