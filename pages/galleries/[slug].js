@@ -3,6 +3,7 @@ import { client, urlFor } from "../../lib/client";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Gallery from "@/components/Gallery";
+import ImageFadeIn from "react-image-fade-in";
 
 const GalleryDetails = ({ gallery, galleries }) => {
   return (
