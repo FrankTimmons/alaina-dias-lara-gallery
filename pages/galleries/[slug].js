@@ -44,8 +44,8 @@ const GalleryDetails = ({ gallery, galleries }) => {
           ))}
         </div>
         <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-2">
-          { gallery.paintings &&
-            gallery.paintings.map((painting, index) => (
+          { gallery?.paintings &&
+            gallery?.paintings.map((painting, index) => (
               <Painting
                 key={painting.name}
                 painting={painting}
