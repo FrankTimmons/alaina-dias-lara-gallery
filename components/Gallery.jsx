@@ -1,11 +1,12 @@
 import React, {useState} from 'react'
 import GalleryView from "@/components/GalleryView";
 import Painting from "@/components/Painting";
+import ImageFadeIn from "react-image-fade-in";
 
 const Gallery = ({gallery, galleries}) => {
   const [galleryView, setGalleryView] = useState(false);
   const [currentPainting, setCurrentPainting] = useState(0);
-  
+
   return (
     <div>
       <div className="absolute top-[125px] text-center inset-x-0 -z-10 bg-white/80 mx-auto w-fit">
