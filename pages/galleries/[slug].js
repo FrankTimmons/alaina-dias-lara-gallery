@@ -44,16 +44,18 @@ const GalleryDetails = ({ gallery, galleries }) => {
           ))}
         </div>
         <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-2">
-          {gallery?.paintings?.map((painting, index) => (
-            <Painting
-              key={painting.name}
-              painting={painting}
-              onClick={() => {
-                setCurrentPainting(index);
-                setGalleryView(true);
-              }}
-            />
-          ))}
+          { gallery.paintings &&
+            gallery.paintings.map((painting, index) => (
+              <Painting
+                key={painting.name}
+                painting={painting}
+                onClick={() => {
+                  setCurrentPainting(index);
+                  setGalleryView(true);
+                }}
+              />
+            ))
+          }
           {galleryView ? (
             <GalleryView
               gallery={gallery}
