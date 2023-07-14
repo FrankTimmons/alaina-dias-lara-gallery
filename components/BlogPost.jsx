@@ -8,7 +8,7 @@ const BlogPost = ({post}) => {
   const [pictureIndex, setPictureIndex] = useState(0)
 
   return (
-    <div className='flex flex-col py-4 bg-slate-100 p-6 m-6'>
+    <div className='flex flex-col py-4 bg-[#fbf6e3f9] p-6 m-6'>
       <div className='text-3xl font-bold text-black'>{post.title}</div>
       <div className='text-xl text-gray-400 mb-3'>{post.date}</div>
       <div className='text-xl'>

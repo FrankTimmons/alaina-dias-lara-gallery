@@ -20,7 +20,7 @@ const ProductDetails = ({ product, products, galleries }) => {
         <h1 className="text-5xl font-bold text-center p-6">{product?.product.toUpperCase()}</h1> 
       </div>
       <div className="px-4 bg-white mt-[300px] min-h-screen py-6">
-        <div className='flex sm:flex-row flex-col sm:items-center sm:gap-6 gap-3 bg-slate-100 p-6 mx-auto mt-6 w-2/3'>
+        <div className='flex sm:flex-row flex-col sm:items-center sm:gap-6 gap-3 bg-[#fbf6e3f9] p-6 mx-auto mt-6 w-2/3'>
           <div className='flex items-center flex-col sm:w-[600px] sm:h-[700px] w-auto h-auto'>
             <ImageFadeIn
               className='object-contain sm:w-[600px] sm:h-[600px] w-[auto] h-[400px]'
