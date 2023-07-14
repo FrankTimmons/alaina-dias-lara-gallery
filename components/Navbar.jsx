@@ -22,6 +22,7 @@ const Navbar = ({galleries}) => {
             </Link>
             <div className='hidden group-hover:flex absolute flex-col px-2 group-hover:bg-white/80 duration-200'>
               {galleries?.map((gallery) => 
+                gallery.subGallery != true &&
                 <Link 
                   onClick={() => {window.location.href=`/galleries/${gallery.slug.current}`}} 
                   key={gallery._id} 

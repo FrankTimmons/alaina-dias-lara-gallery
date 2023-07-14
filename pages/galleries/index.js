@@ -19,6 +19,7 @@ const Galleries = ({frontPage, galleries}) => {
       <div className="px-4 bg-white mt-[300px] min-h-screen py-6">
         <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-2">
           {galleries.map((gallery, index) => (
+            gallery.subGallery != true &&
             <div
               key={index}
               className="flex flex-col items-center content-center justify-center p-3 font-roboto hover:scale-[1.02] duration-300 group"
@@ -29,7 +30,9 @@ const Galleries = ({frontPage, galleries}) => {
                 onClick={() => {window.location.href=`/galleries/${gallery.slug.current}`}} 
               />
               <p className="text-xl font-bold group-hover:underline">{gallery.gallery.toUpperCase()}</p>
-              <p className="text-sm font-bold text-gray-600">{gallery.paintings.length} PAINTING(S)</p>
+              { gallery.paintings &&
+                <p className="text-sm font-bold text-gray-600">{gallery.paintings.length} PAINTING(S)</p>
+              }
             </div>
           ))}
         </div>

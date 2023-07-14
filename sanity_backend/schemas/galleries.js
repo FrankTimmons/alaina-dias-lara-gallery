@@ -9,6 +9,17 @@ export default {
       title: 'Gallery'
     },
     {
+      name: 'subGallery',
+      type: 'boolean',
+      title: 'Sub Gallery?',
+      initialValue: false
+    },
+    {
+      title: 'Parent Gallery Slug',
+      name: 'parentGallery',
+      type: 'string'
+    },
+    {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
