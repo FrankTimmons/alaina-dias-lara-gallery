@@ -20,7 +20,7 @@ const Gallery = ({gallery, galleries}) => {
       </div>
       <div className="px-4 bg-white mt-[300px] min-h-screen py-6">
         {
-          gallery.statement &&
+          gallery?.statement &&
           <div className='flex justify-center text-center'>
             <p className="text-2xl p-6 bg-slate-100 mb-3">{gallery?.statement}</p>
           </div>
