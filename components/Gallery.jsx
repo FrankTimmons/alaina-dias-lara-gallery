@@ -19,7 +19,12 @@ const Gallery = ({gallery, galleries}) => {
         <h1 className="text-5xl font-bold text-center p-6">{gallery?.gallery.toUpperCase()}</h1> 
       </div>
       <div className="px-4 bg-white mt-[300px] min-h-screen py-6">
-        <p className="text-xl p-6 bg-slate-100 mb-3">{gallery?.statement}</p>
+        {
+          gallery.statement &&
+          <div className='flex justify-center text-center'>
+            <p className="text-2xl p-6 bg-slate-100 mb-3">{gallery?.statement}</p>
+          </div>
+        }
         <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-2">
           {galleries?.map((subGallery, index) => (      
             subGallery.parentGallery == gallery?.slug.current &&
