@@ -12,7 +12,7 @@ const GalleryView = ({currentPainting, gallery, closeGalleryView, nextPainting, 
         }  
       </div>
       <div className='w-[90%] h-[90%] flex justify-center'>
-        <img className='object-contain' src={urlFor(gallery.paintings[currentPainting].image).quality(10)} alt="" />
+        <img className='object-contain' src={urlFor(gallery.paintings[currentPainting].image)} alt="" />
       </div>
       <div className='fixed right-0 w-[50%] h-full' onClick={currentPainting == (gallery.paintings.length - 1) ? null : nextPainting}>
         {currentPainting == (gallery.paintings.length - 1) ? <></> :
