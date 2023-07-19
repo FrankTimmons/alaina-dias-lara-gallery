@@ -66,28 +66,28 @@ const ProductDetails = ({ product, products, galleries }) => {
   );
 };
 
-export const getStaticPaths = async () => {
-  const query = `*[_type == "products"] {
-    slug {
-      current
-    }
-  }`;
+// export const getStaticPaths = async () => {
+//   const query = `*[_type == "products"] {
+//     slug {
+//       current
+//     }
+//   }`;
 
-  const products = await client.fetch(query);
+//   const products = await client.fetch(query);
 
-  const paths = products.map((product) => ({
-    params: {
-      slug: product.slug.current,
-    },
-  }));
+//   const paths = products.map((product) => ({
+//     params: {
+//       slug: product.slug.current,
+//     },
+//   }));
 
-  return {
-    paths,
-    fallback: "blocking",
-  };
-};
+//   return {
+//     paths,
+//     fallback: "blocking",
+//   };
+// };
 
-export const getStaticProps = async ({ params: { slug } }) => {
+export const getSeverSideProps = async ({ params: { slug } }) => {
   const product = await client.fetch(
     `*[_type == "products" && slug.current == '${slug}'][0]`
   );

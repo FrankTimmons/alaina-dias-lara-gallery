@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import GalleryView from "@/components/GalleryView";
 import Painting from "@/components/Painting";
 import ImageFadeIn from "react-image-fade-in";
@@ -7,22 +7,37 @@ import { client, urlFor } from "../lib/client";
 const Gallery = ({gallery, galleries}) => {
   const [galleryView, setGalleryView] = useState(false);
   const [currentPainting, setCurrentPainting] = useState(0);
+  const [bannerPhoto, setBannerPhoto] = useState(null);
+  const [galleryName, setGalleryName] = useState(null);
+  const [galleryStatement, setGalleryStatement] = useState(null);
+  const [galleryPaintings, setGalleryPaintings] = useState(null);
+
+  useEffect(() => {
+    setBannerPhoto(gallery.bannerPhoto);
+    setGalleryName(gallery.gallery);
+    setGalleryPaintings(gallery.paintings);
+    setGalleryStatement(gallery.statement);
+  }, [])
+  
 
   return (
     <>
+    {
+      bannerPhoto &&
       <ImageFadeIn
         className='fixed top-0 w-full h-[300px] object-cover -z-10'
-        src={urlFor(gallery?.bannerPhoto)}
+        src={urlFor(bannerPhoto)}
       />
+    }
       <div>
         <div className="absolute top-[125px] text-center inset-x-0 -z-10 bg-white/80 mx-auto w-fit">
-        <h1 className="text-5xl font-bold text-center p-6">{gallery?.gallery.toUpperCase()}</h1> 
+        <h1 className="text-5xl font-bold text-center p-6">{galleryName?.toUpperCase()}</h1> 
       </div>
       <div className="px-4 bg-white mt-[300px] min-h-screen py-6">
         {
           gallery?.statement &&
           <div className='flex justify-center text-center'>
-            <p className="text-2xl p-6 bg-slate-100 mb-3">{gallery?.statement}</p>
+            <p className="text-2xl p-6 bg-slate-100 mb-3">{galleryStatement}</p>
           </div>
         }
         <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-2">
@@ -57,7 +72,7 @@ const Gallery = ({gallery, galleries}) => {
             }
             {galleryView ? (
               <GalleryView
-                gallery={gallery}
+                galleryPaintings={galleryPaintings}
                 currentPainting={currentPainting}
                 nextPainting={() => setCurrentPainting(currentPainting + 1)}
                 previousPainting={() => setCurrentPainting(currentPainting - 1)}
