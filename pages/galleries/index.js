@@ -5,7 +5,6 @@ import ImageFadeIn from 'react-image-fade-in';
 import { client, urlFor } from '@/lib/client';
 
 const Galleries = ({frontPage, galleries}) => {
-  console.log(frontPage)
   return (
     <>
       <Navbar galleries={galleries} />
