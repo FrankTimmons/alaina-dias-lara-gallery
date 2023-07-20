@@ -14,8 +14,10 @@ const Gallery = ({gallery, galleries}) => {
   const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
-    setBannerPhoto(gallery.bannerPhoto);
-  }, [])
+    setGalleryName(gallery.gallery);
+    setGalleryPaintings(gallery.paintings);
+    setGalleryStatement(gallery.statement);
+  })
   
 
   return (
