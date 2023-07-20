@@ -35,7 +35,7 @@ const Gallery = ({gallery, galleries}) => {
       </div>
       <div className="px-4 bg-white mt-[300px] min-h-screen py-6">
         {
-          gallery?.statement &&
+          galleryStatement &&
           <div className='flex justify-center text-center'>
             <p className="text-2xl p-6 bg-slate-100 mb-3">{galleryStatement}</p>
           </div>
@@ -58,8 +58,8 @@ const Gallery = ({gallery, galleries}) => {
           ))}
         </div>
         <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-2">
-          { gallery?.paintings &&
-            gallery?.paintings.map((painting, index) => (
+          { galleryPaintings &&
+            galleryPaintings.map((painting, index) => (
                 <Painting
                   key={painting.name}
                   painting={painting}
