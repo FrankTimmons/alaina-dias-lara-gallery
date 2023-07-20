@@ -11,13 +11,11 @@ const Gallery = ({gallery, galleries}) => {
   const [galleryName, setGalleryName] = useState(null);
   const [galleryStatement, setGalleryStatement] = useState(null);
   const [galleryPaintings, setGalleryPaintings] = useState(null);
+  const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
     setBannerPhoto(gallery.bannerPhoto);
-    setGalleryName(gallery.gallery);
-    setGalleryPaintings(gallery.paintings);
-    setGalleryStatement(gallery.statement);
-  }, [gallery?.bannerPhoto])
+  }, [])
   
 
   return (
@@ -25,6 +23,11 @@ const Gallery = ({gallery, galleries}) => {
     {
       bannerPhoto &&
       <ImageFadeIn
+        onLoad={()=> {
+          setGalleryName(gallery.gallery);
+          setGalleryPaintings(gallery.paintings);
+          setGalleryStatement(gallery.statement);
+        }}
         className='fixed top-0 w-full h-[300px] object-cover -z-10'
         src={urlFor(bannerPhoto)}
       />
