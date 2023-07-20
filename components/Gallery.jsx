@@ -17,7 +17,7 @@ const Gallery = ({gallery, galleries}) => {
     setGalleryName(gallery.gallery);
     setGalleryPaintings(gallery.paintings);
     setGalleryStatement(gallery.statement);
-  }, [])
+  }, [gallery?.bannerPhoto])
   
 
   return (
