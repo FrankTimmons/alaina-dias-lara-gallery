@@ -5,10 +5,8 @@ import ImageFadeIn from 'react-image-fade-in';
 import { client, urlFor } from '@/lib/client';
 
 const Shop = ({frontPage, galleries, products}) => {
-  console.log(frontPage)
   return (
     <>
-      <Navbar galleries={galleries} />
       <ImageFadeIn
         className='fixed top-0 w-full h-[300px] object-cover -z-10'
         src={urlFor(frontPage[0].image)}
@@ -34,7 +32,6 @@ const Shop = ({frontPage, galleries, products}) => {
           ))}
         </div>
       </div>
-      <Footer/>
     </>
   )
 }

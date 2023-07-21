@@ -5,11 +5,10 @@ import BlogPost from "@/components/BlogPost";
 import ImageFadeIn from "react-image-fade-in";
 import Footer from "@/components/Footer";
 
-export default function BlogPosts({ frontPage, galleries, blogPosts }) {
+export default function BlogPosts({ frontPage, blogPosts }) {
 
   return (
     <>
-      <Navbar galleries={galleries} />
       <ImageFadeIn
         className='fixed top-0 w-full h-[300px] object-cover -z-10'
         src={
@@ -24,14 +23,12 @@ export default function BlogPosts({ frontPage, galleries, blogPosts }) {
           <BlogPost key={index} post={post} />
         ))}
       </div>
-      <Footer/>
     </>
   );
 }
 
 export async function getStaticProps() {
   const frontPage = await client.fetch(`*[_type == "frontPage"]`);
-  const galleries = await client.fetch(`*[_type == "galleries"]`);
   const blogPosts = await client.fetch(`*[_type == "blogPost"]`);
   
   return {

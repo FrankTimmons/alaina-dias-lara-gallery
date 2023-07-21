@@ -8,7 +8,6 @@ import ImageFadeIn from "react-image-fade-in";
 const About = ({frontPage, galleries}) => {
   return (
     <div>
-      <Navbar galleries={galleries}/>
       <ImageFadeIn
         className='fixed top-0 w-full h-[300px] object-cover -z-10'
         src={
@@ -16,7 +15,6 @@ const About = ({frontPage, galleries}) => {
         }
       />
       <AboutMe />
-      <Footer />
     </div>
   )
 }

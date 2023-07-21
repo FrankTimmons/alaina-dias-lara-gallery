@@ -6,12 +6,11 @@ import Footer from "@/components/Footer";
 import BlockContent from '@sanity/block-content-to-react'
 import Link from "next/link";
 
-const ProductDetails = ({ product, products, galleries }) => {
+const ProductDetails = ({ product, products}) => {
   const [pictureIndex, setPictureIndex] = useState(0)
 
   return (
     <>
-      <Navbar galleries={galleries} />
       <ImageFadeIn
         className='fixed top-0 w-full h-[300px] object-cover -z-10'
         src={urlFor(product?.images[0])}
@@ -61,7 +60,6 @@ const ProductDetails = ({ product, products, galleries }) => {
           </div>
         </div>
       </div>
-      <Footer/>
     </>
   );
 };

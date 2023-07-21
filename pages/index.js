@@ -7,9 +7,7 @@ import Footer from '@/components/Footer';
 export default function Home({frontPage, galleries}) {
   return (
     <div className='block m-auto'>
-      <Navbar galleries={galleries}/>
       <Banner banner={frontPage[0]}/>
-      <Footer/>
     </div>
   )
 }

@@ -2,7 +2,7 @@ import Link from 'next/link'
 import React, {useState} from 'react'
 import {FaBars, FaTimes} from 'react-icons/fa'
 
-const Navbar = ({galleries}) => {
+const Navbar = () => {
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
 
@@ -16,24 +16,9 @@ const Navbar = ({galleries}) => {
           <Link href={`/about`} className='hover:text-blue-800 duration-200 px-2 py-4'>
             ABOUT
           </Link>
-          <div className='group'>
-            <Link href={`/galleries`}>
-              <h1 className='group-hover:text-blue-800 duration-200 py-4 px-2 cursor-pointer'>GALLERIES</h1>
-            </Link>
-            <div className='hidden group-hover:flex absolute flex-col px-2 group-hover:bg-white/80 duration-200'>
-              {galleries?.map((gallery) => 
-                gallery.subGallery != true &&
-                <Link 
-                  onClick={() => {window.location.href=`/galleries/${gallery.slug.current}`}} 
-                  key={gallery._id} 
-                  href={`/galleries/${gallery.slug.current}`}     
-                  className='hover:text-blue-800 duration-200'
-                >
-                  {gallery.gallery.toUpperCase()}
-                </Link>
-              )}
-            </div>
-          </div>
+          <Link href={`/galleries`} className='hover:text-blue-800 duration-200 py-4 px-2'>
+            GALLERIES
+          </Link>
           <Link href={`/shop`} className='hover:text-blue-800 duration-200 px-2 py-4'>
             SHOP
           </Link>
