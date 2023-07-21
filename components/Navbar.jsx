@@ -44,19 +44,19 @@ const Navbar = () => {
               : "lg:hidden fixed top-0 left-0 w-full h-[calc(100vh-60px)] my-[60px] bg-white/90 flex flex-col justify-center items-center"
           }
         >
-          <Link href={`/`} className="py-6 text-4xl font-bold hover:text-blue-800 duration-200">
+          <Link href={`/`} onClick={handleClick} className="py-6 text-4xl font-bold hover:text-blue-800 duration-200">
             HOME
           </Link>
-          <Link href={`/about`} className="py-6 text-4xl font-bold hover:text-blue-800 duration-200">
+          <Link href={`/about`} onClick={handleClick} className="py-6 text-4xl font-bold hover:text-blue-800 duration-200">
             ABOUT
           </Link>
-          <Link href={`/galleries`} className="py-6 text-4xl font-bold hover:text-blue-800 duration-200">
+          <Link href={`/galleries`} onClick={handleClick} className="py-6 text-4xl font-bold hover:text-blue-800 duration-200">
             GALLERIES
           </Link>
-          <Link href={`/shop`} className="py-6 text-4xl font-bold hover:text-blue-800 duration-200">
+          <Link href={`/shop`} onClick={handleClick} className="py-6 text-4xl font-bold hover:text-blue-800 duration-200">
             SHOP
           </Link>
-          <Link href={`/blog`} className="py-6 text-4xl font-bold hover:text-blue-800 duration-200">
+          <Link href={`/blog`} onClick={handleClick} className="py-6 text-4xl font-bold hover:text-blue-800 duration-200">
             BLOG
           </Link>
         </ul>
