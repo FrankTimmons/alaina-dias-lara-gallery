@@ -1,10 +1,8 @@
-import Footer from '@/components/Footer';
-import Navbar from '@/components/Navbar';
 import React from 'react'
 import ImageFadeIn from 'react-image-fade-in';
 import { client, urlFor } from '@/lib/client';
 
-const Shop = ({frontPage, galleries, products}) => {
+const Shop = ({frontPage, products}) => {
   return (
     <>
       <ImageFadeIn
@@ -40,12 +38,10 @@ export default Shop;
 
 export async function getStaticProps() {
   const frontPage = await client.fetch(`*[_type == "frontPage"]`);
-  const galleries = await client.fetch(`*[_type == "galleries"]`);
   const products = await client.fetch(`*[_type == "products"]`);
   return {
     props: {
       frontPage,
-      galleries,
       products
     }
   };

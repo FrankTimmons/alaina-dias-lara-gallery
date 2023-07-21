@@ -1,8 +1,5 @@
 import React, {useState} from "react";
 import { client, urlFor } from "../../lib/client";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import Gallery from "@/components/Gallery";
 import GalleryView from "@/components/GalleryView";
 import Painting from "@/components/Painting";
 import ImageFadeIn from "react-image-fade-in";

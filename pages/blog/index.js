@@ -1,9 +1,7 @@
 import React from "react";
 import { client, urlFor } from "../../lib/client";
-import Navbar from "@/components/Navbar";
 import BlogPost from "@/components/BlogPost";
 import ImageFadeIn from "react-image-fade-in";
-import Footer from "@/components/Footer";
 
 export default function BlogPosts({ frontPage, blogPosts }) {
 
@@ -34,7 +32,6 @@ export async function getStaticProps() {
   return {
     props: {
       frontPage,
-      galleries,
       blogPosts,
     },
   };

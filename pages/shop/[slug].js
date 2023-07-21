@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { client, urlFor, serializers } from "../../lib/client";
-import Navbar from "@/components/Navbar";
 import ImageFadeIn from "react-image-fade-in";
-import Footer from "@/components/Footer";
 import BlockContent from '@sanity/block-content-to-react'
 import Link from "next/link";
 
@@ -90,10 +88,9 @@ export const getStaticProps = async ({ params: { slug } }) => {
     `*[_type == "products" && slug.current == '${slug}'][0]`
   );
   const products = await client.fetch(`*[_type == "products"]`);
-  const galleries = await client.fetch(`*[_type == "galleries"]`);
 
   return {
-    props: { product, products, galleries },
+    props: { product, products },
   };
 };
 
