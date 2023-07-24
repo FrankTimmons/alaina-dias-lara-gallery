@@ -15,7 +15,9 @@ const GalleryDetails = ({ gallery, galleries }) => {
   
   return (
     <>
-      <div className='fixed top-0 w-full h-[300px] object-cover -z-10 bg-black'/>
+      {
+        loading && <div className='fixed top-0 w-full h-[300px] object-cover -z-10 bg-black'/>
+      }
       <img
         className={ loading ? 'hidden' : 'fixed top-0 w-full h-[300px] object-cover -z-10'}
         src={urlFor(gallery?.bannerPhoto)}
