@@ -1,10 +1,16 @@
 import Link from 'next/link'
 import React, {useState} from 'react'
 import {FaBars, FaTimes} from 'react-icons/fa'
+import Contact from './Contact';
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
+  const [contact, setContact] = useState(false);
+  const handleContactClick = () => {
+    setContact(!contact)
+    setNav(false);
+  }
 
   return ( 
     <>
@@ -32,10 +38,12 @@ const Navbar = () => {
         </div>
 
         <div className='w-[280px] lg:flex hidden justify-end'>
-          <Link href={`/contact`} className='border-black border-2 p-2 bg-white hover:bg-black hover:text-white duration-200'>
+          <div onClick={handleContactClick} className='cursor-pointer border-black border-2 p-2 bg-white hover:bg-black hover:text-white duration-200'>
             CONTACT
-          </Link>
+          </div>
         </div>
+
+        {contact && <Contact handleContactClick={handleContactClick}/>}
 
         <ul
           className={
@@ -59,6 +67,9 @@ const Navbar = () => {
           <Link href={`/blog`} onClick={handleClick} className="py-6 text-4xl font-bold hover:text-blue-800 duration-200">
             BLOG
           </Link>
+          <div onClick={handleContactClick} className="py-6 text-4xl font-bold hover:text-blue-800 duration-200">
+            CONTACT
+          </div>
         </ul>
       </div>
     </>

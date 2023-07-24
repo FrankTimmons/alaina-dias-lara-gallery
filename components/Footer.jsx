@@ -1,11 +1,19 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Link from 'next/link'
 import {AiFillLinkedin, AiFillGithub} from 'react-icons/ai'
+import Contact from './Contact';
 
 
 const Footer = () => {
+  const [contact, setContact] = useState(false);
+  const handleContactClick = () => {
+    setContact(!contact)
+  }
+
+  
   return (
     <>
+      {contact && <Contact handleContactClick={handleContactClick}/>}
       <div className='w-full h-auto bg-zinc-900 flex-row justify-around flex py-6'>
         <div className='flex flex-col text-white font-serif text-center gap-6'>
           <p>__</p>
@@ -14,7 +22,7 @@ const Footer = () => {
         </div>
         <div className='flex flex-col text-white font-serif text-center gap-6'>
           <p>__</p>
-          <Link href={`/contact`} className='hover:underline'>CONTACT</Link>
+          <div onClick={handleContactClick} className='hover:underline cursor-pointer'>CONTACT</div>
           <Link href={`/about`} className='hover:underline'>ABOUT</Link>
         </div>
         <div className='flex flex-col text-white font-serif text-center gap-6'>
