@@ -7,7 +7,7 @@ export default function BlogPosts({ frontPage, blogPosts }) {
 
   return (
     <>
-      <ImageFadeIn
+      <img
         className='fixed top-0 w-full h-[300px] object-cover -z-10'
         src={
           urlFor(frontPage[0].image)

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { client, urlFor } from "../../lib/client";
 import GalleryView from "@/components/GalleryView";
 import Painting from "@/components/Painting";
@@ -7,12 +7,19 @@ import ImageFadeIn from "react-image-fade-in";
 const GalleryDetails = ({ gallery, galleries }) => {
   const [galleryView, setGalleryView] = useState(false);
   const [currentPainting, setCurrentPainting] = useState(0);
+  const [loading, setLoading] = useState(true);
+  
+  useEffect(() => {
+    setLoading(false)
+  }, [loading])
   
   return (
     <>
-      <ImageFadeIn
-        className='fixed top-0 w-full h-[300px] object-cover -z-10'
-        src={urlFor(gallery.bannerPhoto)}
+      <div className='fixed top-0 w-full h-[300px] object-cover -z-10 bg-black'/>
+      <img
+        className={ loading ? 'hidden' : 'fixed top-0 w-full h-[300px] object-cover -z-10'}
+        src={urlFor(gallery?.bannerPhoto)}
+        onLoad={() => setLoading(false)}
       />     
       <div>
         <div className="absolute top-[125px] text-center inset-x-0 -z-10 bg-white/80 mx-auto w-fit">
