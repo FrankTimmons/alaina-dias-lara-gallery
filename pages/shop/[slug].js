@@ -3,9 +3,28 @@ import { client, urlFor, serializers } from "../../lib/client";
 import ImageFadeIn from "react-image-fade-in";
 import BlockContent from '@sanity/block-content-to-react'
 import Link from "next/link";
+import { useShoppingCart, formatCurrencyString } from "use-shopping-cart";
 
 const ProductDetails = ({ product, products}) => {
   const [pictureIndex, setPictureIndex] = useState(0)
+  const [quantity, setQuantity] = useState(1);
+
+  const { addItem,  } = useShoppingCart();
+
+  const addToCart = () => {
+    addItem(product, {count: quantity});
+    setQuantity(1);
+  }
+
+  const decreaseQuantity = () => {
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+    }
+  };
+
+  const increaseQuantity = () => {
+    setQuantity(quantity + 1);
+  };
 
   return (
     <>
@@ -40,7 +59,7 @@ const ProductDetails = ({ product, products}) => {
           <div className="h-auto flex flex-col gap-6 justify-between text-xl">
             <div>
               <p className='text-3xl font-bold text-black'>{product?.product}</p>
-              <p className='text-xl text-blue-800'>${product?.price}</p>
+              <p className='text-xl text-blue-800'>{formatCurrencyString({value: product?.price, currency: "USD"})}</p>
             </div>
             <BlockContent
               blocks={product?.description}
@@ -48,13 +67,36 @@ const ProductDetails = ({ product, products}) => {
               projectId={"3a3zvinb"}
               dataset={"production"}
             />
-            <Link 
-              type="button" 
-              className="text-xl rounded-md bg-blue-800 text-white p-4 font-bold w-fit hover:bg-white hover:text-blue-800 border-blue-800 border-2 duration-200 mb-[100px]" 
-              href={product?.paymentLink}
-            >
-              BUY NOW
-            </Link>
+            <div className="flex justify-around items-center mt-4 mb-2 w-40">
+              <button
+                onClick={decreaseQuantity}
+                className="hover:text-emerald-500 hover:bg-emerald-50 w-2 h-8 rounded-full transition-colors duration-500"
+              >
+                -
+              </button>
+              <span className="w-2 text-center rounded-md mx-3">{quantity}</span>
+              <button
+                onClick={increaseQuantity}
+                className="hover:text-emerald-500 hover:bg-emerald-50 w-2 h-8 rounded-full transition-colors duration-500"
+              >
+                +
+              </button>
+            </div>
+            <div className="flex flex-row gap-2">
+              <button 
+                className="text-xl rounded-md bg-blue-800 text-white p-4 font-bold w-fit hover:bg-white hover:text-blue-800 border-blue-800 border-2 duration-200 mb-[100px]"
+                onClick={addToCart}
+              >
+                ADD TO CART
+              </button>
+              <Link 
+                type="button" 
+                className="text-xl rounded-md bg-blue-800 text-white p-4 font-bold w-fit hover:bg-white hover:text-blue-800 border-blue-800 border-2 duration-200 mb-[100px]" 
+                href={product?.paymentLink}
+              >
+                BUY NOW
+              </Link>
+            </div>
           </div>
         </div>
       </div>

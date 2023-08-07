@@ -36,10 +36,10 @@ export default {
     {
       name: 'price',
       type: 'number',
-      title: 'Price'
+      title: 'Price (in cents)'
     },
     {
-      name: 'priceId',
+      name: 'id',
       type: 'string',
       title: 'Stripe Price Id'
     },
