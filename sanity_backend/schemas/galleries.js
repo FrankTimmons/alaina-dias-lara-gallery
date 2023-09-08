@@ -4,6 +4,11 @@ export default {
   title: 'Galleries',
   fields: [
     {
+      name: 'order',
+      type: 'number',
+      title: 'Number in Order'
+    },
+    {
       name: 'gallery',
       type: 'string',
       title: 'Gallery'

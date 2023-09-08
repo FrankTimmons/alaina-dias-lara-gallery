@@ -42,7 +42,7 @@ export default Galleries
 
 export async function getStaticProps() {
   const frontPage = await client.fetch(`*[_type == "frontPage"]`);
-  const galleries = await client.fetch(`*[_type == "galleries"]`);
+  const galleries = await client.fetch(`*[_type == "galleries"] | order(order asc)`);
   return {
     props: {
       frontPage,
