@@ -109,7 +109,6 @@ export const getStaticProps = async ({ params: { slug } }) => {
 
   return {
     props: { gallery, galleries },
-    revalidate: 10,
   };
 };
 
