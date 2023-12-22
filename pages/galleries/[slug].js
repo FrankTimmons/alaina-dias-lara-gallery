@@ -8,6 +8,8 @@ const GalleryDetails = ({ gallery, galleries }) => {
   const [galleryView, setGalleryView] = useState(false);
   const [currentPainting, setCurrentPainting] = useState(0);
   const [loading, setLoading] = useState(true);
+
+  // commit
   
   useEffect(() => {
     setLoading(false)
