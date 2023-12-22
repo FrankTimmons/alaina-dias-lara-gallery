@@ -47,6 +47,7 @@ export async function getStaticProps() {
     props: {
       frontPage,
       galleries
-    }
+    },
+    revalidate: 10,
   };
 }
