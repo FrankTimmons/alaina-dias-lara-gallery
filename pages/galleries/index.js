@@ -48,6 +48,5 @@ export async function getStaticProps() {
       frontPage,
       galleries
     },
-    revalidate: 10,
   };
 }
