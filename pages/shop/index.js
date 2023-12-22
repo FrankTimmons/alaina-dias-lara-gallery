@@ -45,6 +45,5 @@ export async function getStaticProps() {
       frontPage,
       products
     },
-    revalidate: 10,
   };
 }

@@ -23,7 +23,6 @@ export async function getStaticProps() {
     props: {
       frontPage,
     },
-    revalidate: 10,
   };
 }
 

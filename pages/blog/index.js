@@ -34,6 +34,5 @@ export async function getStaticProps() {
       frontPage,
       blogPosts,
     },
-    revalidate: 10,
   };
 }
