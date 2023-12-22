@@ -44,6 +44,7 @@ export async function getStaticProps() {
     props: {
       frontPage,
       products
-    }
+    },
+    revalidate: 10,
   };
 }
