@@ -17,7 +17,7 @@ const About = ({frontPage}) => {
   )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const frontPage = await client.fetch(`*[_type == "frontPage"]`);
   return {
     props: {

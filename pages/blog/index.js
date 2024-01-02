@@ -25,7 +25,7 @@ export default function BlogPosts({ frontPage, blogPosts }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const frontPage = await client.fetch(`*[_type == "frontPage"]`);
   const blogPosts = await client.fetch(`*[_type == "blogPost"]`);
   

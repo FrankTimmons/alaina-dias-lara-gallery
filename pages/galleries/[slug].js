@@ -81,29 +81,29 @@ const GalleryDetails = ({ gallery, galleries }) => {
 };
 
 
-export const getStaticPaths = async () => {
-  const query = `*[_type == "galleries"] {
-    slug {
-      current
-    }
-  }`;
+// export const getStaticPaths = async () => {
+//   const query = `*[_type == "galleries"] {
+//     slug {
+//       current
+//     }
+//   }`;
 
-  const galleries = await client.fetch(query);
+//   const galleries = await client.fetch(query);
 
-  const paths = galleries.map((gallery) => ({
-    params: {
-      slug: gallery.slug.current,
-    },
-  }));
+//   const paths = galleries.map((gallery) => ({
+//     params: {
+//       slug: gallery.slug.current,
+//     },
+//   }));
 
 
-  return {
-    paths,
-    fallback: false,
-  };
-};
+//   return {
+//     paths,
+//     fallback: false,
+//   };
+// };
 
-export const getStaticProps = async ({ params: { slug } }) => {
+export const getServerSideProps = async ({ params: { slug } }) => {
   const gallery = await client.fetch(
     `*[_type == "galleries" && slug.current == '${slug}'][0]`
   );

@@ -37,7 +37,7 @@ const Shop = ({frontPage, products}) => {
 
 export default Shop;
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const frontPage = await client.fetch(`*[_type == "frontPage"]`);
   const products = await client.fetch(`*[_type == "products"]`);
   return {

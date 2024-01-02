@@ -40,7 +40,7 @@ const Galleries = ({frontPage, galleries}) => {
 
 export default Galleries
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const frontPage = await client.fetch(`*[_type == "frontPage"]`);
   const galleries = await client.fetch(`*[_type == "galleries"] | order(order asc)`);
   return {

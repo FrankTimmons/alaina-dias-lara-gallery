@@ -125,7 +125,7 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async ({ params: { slug } }) => {
+export const getServerSideProps = async ({ params: { slug } }) => {
   const product = await client.fetch(
     `*[_type == "products" && slug.current == '${slug}'][0]`
   );
