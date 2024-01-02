@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react'
 import { urlFor, serializers } from '../lib/client';
-import parse from 'html-react-parser';
 import ImageFadeIn from "react-image-fade-in";
 import Logo from '../public/logo.svg'
 import BlockContent from "@sanity/block-content-to-react";
@@ -16,8 +15,8 @@ const Banner = ({banner}) => {
         <div className='flex flex-col justify-center items-center content-center h-[35%]'>
           <h1 className='w-[60%] font-serif xl:text-2xl lg:text-lg'>
 
-            <BlockContent
-              
+            <BlockContent   
+                       
               blocks={banner.quote}
               serializers={serializers}
               projectId={"3a3zvinb"}

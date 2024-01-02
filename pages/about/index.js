@@ -3,7 +3,8 @@ import React from 'react'
 import { client, urlFor } from '../../lib/client';
 import ImageFadeIn from "react-image-fade-in";
 
-const About = ({frontPage}) => {
+const About = ({frontPage, about}) => {
+  console.log(about[0])
   return (
     <div>
       <img
@@ -12,16 +13,18 @@ const About = ({frontPage}) => {
           urlFor(frontPage[0].image)
         }
       />
-      <AboutMe />
+      <AboutMe about={about[0]}/>
     </div>
   )
 }
 
 export async function getServerSideProps() {
   const frontPage = await client.fetch(`*[_type == "frontPage"]`);
+  const about = await client.fetch(`*[_type == "about"]`);
   return {
     props: {
       frontPage,
+      about
     },
   };
 }

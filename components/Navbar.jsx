@@ -44,7 +44,7 @@ const Navbar = () => {
             />
         </button>
 
-        <div onClick={handleClick} className="lg:hidden z-10 cursor-pointer flex justify-end items-center px-4 w-full h-[60px]">
+        <div onClick={handleClick} className="lg:hidden z-10 cursor-pointer flex justify-end items-center px-4 h-[60px]">
           {!nav ? <FaBars /> : <FaTimes />}
         </div>
 
