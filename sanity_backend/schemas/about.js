@@ -20,6 +20,11 @@ export default {
       ]
     },
     {
+      name: 'photo',
+      type: 'image',
+      title: 'Photo'
+    },
+    {
       name: 'shoutOuts',
       title: 'Shout outs',
       type: 'array',
