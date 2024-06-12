@@ -22,9 +22,9 @@ const Navbar = () => {
           <Link href={`/`} className='text-2xl w-[280px] whitespace-nowrap cursor-pointer'>ALAINA DIAS LARA</Link>
         </div>
         <div className='hidden lg:flex px-4 font-roboto xl:text-xl lg:text-lg 2xl:gap-24 xl:gap-12 lg:gap-3'>
-          <Link href={`/about`} className='hover:text-blue-800 duration-200 px-2 py-4'>
+          {/* <Link href={`/about`} className='hover:text-blue-800 duration-200 px-2 py-4'>
             ABOUT
-          </Link>
+          </Link> */}
           <Link href={`/galleries`} className='hover:text-blue-800 duration-200 py-4 px-2'>
             GALLERIES
           </Link>
@@ -73,9 +73,9 @@ const Navbar = () => {
           <Link href={`/`} onClick={handleClick} className="py-6 text-4xl font-bold hover:text-blue-800 duration-200">
             HOME
           </Link>
-          <Link href={`/about`} onClick={handleClick} className="py-6 text-4xl font-bold hover:text-blue-800 duration-200">
+          {/* <Link href={`/about`} onClick={handleClick} className="py-6 text-4xl font-bold hover:text-blue-800 duration-200">
             ABOUT
-          </Link>
+          </Link> */}
           <Link href={`/galleries`} onClick={handleClick} className="py-6 text-4xl font-bold hover:text-blue-800 duration-200">
             GALLERIES
           </Link>

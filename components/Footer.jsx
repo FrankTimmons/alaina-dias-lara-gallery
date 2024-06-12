@@ -23,7 +23,7 @@ const Footer = () => {
         <div className='flex flex-col text-white font-serif text-center gap-6'>
           <p>__</p>
           <div onClick={handleContactClick} className='hover:underline cursor-pointer'>CONTACT</div>
-          <Link href={`/about`} className='hover:underline'>ABOUT</Link>
+          {/* <Link href={`/about`} className='hover:underline'>ABOUT</Link> */}
         </div>
         <div className='flex flex-col text-white font-serif text-center gap-6'>
           <p>__</p>
