@@ -67,7 +67,7 @@ const ProductDetails = ({ product, products}) => {
               projectId={"3a3zvinb"}
               dataset={"production"}
             />
-            <div className="flex justify-around items-center mt-4 mb-2 w-40">
+            {/* <div className="flex justify-around items-center mt-4 mb-2 w-40">
               <button
                 onClick={decreaseQuantity}
                 className="hover:text-emerald-500 hover:bg-emerald-50 w-2 h-8 rounded-full transition-colors duration-500"
@@ -96,7 +96,7 @@ const ProductDetails = ({ product, products}) => {
               >
                 BUY NOW
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

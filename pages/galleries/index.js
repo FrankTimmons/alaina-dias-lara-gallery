@@ -14,12 +14,12 @@ const Galleries = ({frontPage, galleries}) => {
         <h1 className="text-5xl font-bold text-center p-6">GALLERIES</h1> 
       </div>
       <div className="px-4 bg-white mt-[300px] min-h-screen py-6">
-        <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-2">
+        <div className="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 gap-2">
           {galleries.map((gallery, index) => (
             gallery.subGallery != true &&
             <div
               key={index}
-              className="flex flex-col items-center content-center justify-center p-3 font-roboto hover:scale-[1.02] duration-300 group"
+              className="flex flex-col items-center content-center justify-center p-3 hover:scale-[1.02] duration-300 group"
             >
               <ImageFadeIn
                 className='h-[300px] w-[300px] 2xl:h-[400px] 2xl:w-[400px] object-contain cursor-pointer p-3'

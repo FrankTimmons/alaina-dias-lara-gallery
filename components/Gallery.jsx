@@ -21,7 +21,7 @@ const Gallery = ({gallery, galleries}) => {
             <p className="text-2xl p-6 bg-slate-100 mb-3">{gallery.statement}</p>
           </div>
         }
-        <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-2">
+        <div className="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 gap-2">
           {galleries?.map((subGallery, index) => (      
             subGallery.parentGallery == gallery?.slug.current &&
             <div
@@ -38,7 +38,7 @@ const Gallery = ({gallery, galleries}) => {
             </div>          
           ))}
         </div>
-        <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-2">
+        <div className="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 gap-2">
           { gallery.paintings &&
             gallery.paintings.map((painting, index) => (
                 <Painting
