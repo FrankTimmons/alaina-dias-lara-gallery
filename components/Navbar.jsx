@@ -32,7 +32,7 @@ const Navbar = () => {
             SHOP
           </Link>
           <Link href={`/blog`} className='hover:text-blue-800 duration-200 px-2 py-4'>
-            BLOG
+            STORIES
           </Link>
         </div>
 
@@ -83,7 +83,7 @@ const Navbar = () => {
             SHOP
           </Link>
           <Link href={`/blog`} onClick={handleClick} className="py-6 text-4xl font-bold hover:text-blue-800 duration-200">
-            BLOG
+            STORIES
           </Link>
           <div onClick={handleContactClick} className="py-6 text-4xl font-bold hover:text-blue-800 duration-200">
             CONTACT

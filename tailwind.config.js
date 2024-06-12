@@ -14,6 +14,8 @@ module.exports = {
       },
       fontFamily: {
         'roboto': ['"Roboto"', 'sans-serif'],
+        'bold': ['"Roboto"', 'sans-serif'],
+        'bold': ['"Roboto"', 'sans-serif'],
       },
       keyframes: {
         'imgFadeIn': {
