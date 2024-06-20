@@ -9,7 +9,7 @@ const BlogPost = ({post}) => {
 
   return (
     <div className='flex flex-col py-4 p-6 m-6 lg:w-2/3 w-[90%]'>
-      <div className='text-3xl font-bold text-black'>{post.title}</div>
+      <div className='text-3xl font-bold text-black text-6xl'>{post.title}</div>
       <div className='text-xl text-gray-400 mb-3'>{post.date}</div>
       <div className='sm:text-xl text-md'>
         {post.pictures &&
