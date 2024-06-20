@@ -13,10 +13,10 @@ export default function BlogPosts({ frontPage, blogPosts }) {
           urlFor(frontPage[0].image)
         }
       />
-      <div className="absolute top-[125px] text-center inset-x-0 -z-10 bg-white/80 mx-auto w-fit">
+      <div className="absolute top-[125px] text-center inset-x-0 -z-10 bg-orange-100/80 mx-auto w-fit">
         <h1 className="text-5xl font-bold text-center p-6">STORIES</h1> 
       </div>
-      <div className="flex px-4 bg-white mt-[300px] min-h-screen py-6 flex-col items-center">
+      <div className="flex px-4 bg-orange-50 mt-[300px] min-h-screen py-6 flex-col items-center">
         {blogPosts.map((post, index) => (
           <BlogPost key={index} post={post} />
         ))}

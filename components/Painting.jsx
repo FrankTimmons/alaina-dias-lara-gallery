@@ -5,7 +5,7 @@ import ImageFadeIn from "react-image-fade-in";
 const Painting = ({painting, onClick}) => {
   return (
     <div
-      className="flex flex-col items-center content-center justify-center p-3 font-roboto hover:scale-[1.02] duration-300 cursor-pointer"
+      className="flex flex-col items-center content-center justify-center p-3 hover:scale-[1.02] duration-300 cursor-pointer"
       onClick={onClick}
     >
       <ImageFadeIn 

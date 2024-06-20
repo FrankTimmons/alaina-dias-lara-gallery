@@ -6,7 +6,7 @@ import BlockContent from "@sanity/block-content-to-react";
 
 const Banner = ({banner}) => {
   return (
-    <div className='flex flex-row max-lg:flex-col'>
+    <div className='flex flex-row max-lg:flex-col bg-orange-50'>
       <div className='max-lg:hidden flex flex-col justify-evenly mt-[60px] lg:w-[412px] xl:w-[600px] 2xl:w-[768px] h-auto'>
         <div className='flex justify-center items-center xl:h-[60%] lg:h-[50%] lg:w-[412px] xl:w-[600px] 2xl:w-[700px]'>
           <Logo className='2xl:h-[50%] xl:h-[60%] h-[75%]'/>
@@ -14,9 +14,7 @@ const Banner = ({banner}) => {
         <div className='bg-[#BC693A] w-full h-[4%]'/>
         <div className='flex flex-col justify-center items-center content-center h-[35%]'>
           <h1 className='w-[60%] font-serif xl:text-2xl lg:text-lg'>
-
-            <BlockContent   
-                       
+            <BlockContent              
               blocks={banner.quote}
               serializers={serializers}
               projectId={"3a3zvinb"}
@@ -36,7 +34,6 @@ const Banner = ({banner}) => {
       </div>
       <div className='lg:hidden flex flex-col justify-center items-center h-[35%] my-12'>
         <h1 className='w-[60%] font-serif text-xl'>
-
           <BlockContent   
             blocks={banner.quote}
             serializers={serializers}

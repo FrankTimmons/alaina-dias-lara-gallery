@@ -18,7 +18,7 @@ const Shop = ({frontPage, products}) => {
           {products.map((product, index) => (
             <div
               key={index}
-              className="flex flex-col items-center content-center justify-center p-3 font-roboto hover:scale-[1.02] duration-300 group"
+              className="flex flex-col items-center content-center justify-center p-3 hover:scale-[1.02] duration-300 group"
             >
               <ImageFadeIn
                 className='h-[300px] w-[300px] 2xl:h-[400px] 2xl:w-[400px] object-contain cursor-pointer p-3'

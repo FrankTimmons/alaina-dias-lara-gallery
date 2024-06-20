@@ -17,11 +17,11 @@ const Navbar = () => {
 
   return ( 
     <>
-      <div className='fixed top-0 lg:bg-white/80 bg-white/90 w-full h-[60px] flex justify-between items-center px-4 z-20 font-bold'>
+      <div className='fixed top-0 lg:bg-orange-50/80 bg-orange-50/90 w-full h-[60px] flex justify-between items-center px-4 z-20 font-bold'>
         <div>
           <Link href={`/`} className='text-2xl w-[280px] whitespace-nowrap cursor-pointer'>ALAINA DIAS LARA</Link>
         </div>
-        <div className='hidden lg:flex px-4 font-roboto xl:text-xl lg:text-lg 2xl:gap-24 xl:gap-12 lg:gap-3'>
+        <div className='hidden lg:flex px-4 xl:text-xl lg:text-lg 2xl:gap-24 xl:gap-12 lg:gap-3'>
           {/* <Link href={`/about`} className='hover:text-blue-800 duration-200 px-2 py-4'>
             ABOUT
           </Link> */}
@@ -55,7 +55,7 @@ const Navbar = () => {
               />
           </button>
           <div className='flex items-center'>
-            <div onClick={handleContactClick} className='w-auto cursor-pointer border-black border-2 p-2 bg-white hover:bg-black hover:text-white duration-200'>
+            <div onClick={handleContactClick} className='w-auto cursor-pointer border-black border-2 p-2 bg-orange-100 hover:bg-black hover:text-orange-100 duration-200'>
               CONTACT
             </div>
           </div>
