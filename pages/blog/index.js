@@ -14,7 +14,7 @@ export default function BlogPosts({ frontPage, blogPosts }) {
         }
       />
       <div className="absolute top-[125px] text-center inset-x-0 -z-10 bg-orange-100/80 mx-auto w-fit">
-        <h1 className="text-5xl font-bold text-center p-6">STORIES</h1> 
+        <h1 className="text-5xl font-bold text-center p-6">PERSPECTIVES</h1> 
       </div>
       <div className="flex px-4 bg-orange-50 mt-[300px] min-h-screen py-6 flex-col items-center">
         {blogPosts.map((post, index) => (

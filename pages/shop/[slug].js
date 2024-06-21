@@ -35,8 +35,8 @@ const ProductDetails = ({ product, products}) => {
       <div className="absolute top-[125px] text-center inset-x-0 -z-10 bg-white/80 mx-auto w-fit">
         <h1 className="text-5xl font-bold text-center p-6">{product?.product}</h1> 
       </div>
-      <div className="px-4 bg-white mt-[300px] min-h-screen py-6">
-        <div className='flex sm:flex-row flex-col sm:items-center sm:gap-6 gap-3 bg-slate-100 p-6 mx-auto mt-6 lg:w-2/3'>
+      <div className="px-4 bg-orange-50 mt-[300px] min-h-screen py-6">
+        <div className='flex sm:flex-row flex-col sm:items-center sm:gap-6 gap-3 bg-orange-100 p-6 mx-auto mt-6 lg:w-2/3'>
           <div className='flex items-center flex-col sm:w-[600px] sm:h-[700px] w-auto h-auto'>
             <ImageFadeIn
               className='object-contain sm:w-[600px] sm:h-[600px] w-[auto] h-[400px]'
@@ -59,7 +59,7 @@ const ProductDetails = ({ product, products}) => {
           <div className="h-auto flex flex-col gap-6 justify-between text-xl">
             <div>
               <p className='text-3xl font-bold text-black'>{product?.product}</p>
-              <p className='text-xl text-blue-800'>{formatCurrencyString({value: product?.price, currency: "USD"})}</p>
+              {/* <p className='text-xl text-blue-800'>{formatCurrencyString({value: product?.price, currency: "USD"})}</p> */}
             </div>
             <BlockContent
               blocks={product?.description}
