@@ -24,14 +24,14 @@ const GalleryDetails = ({ gallery, galleries }) => {
         onLoad={() => setLoading(false)}
       />     
       <div>
-        <div className="absolute top-[125px] text-center inset-x-0 -z-10 bg-white/80 mx-auto w-fit">
-        <h1 className="text-5xl font-bold text-center p-6">{gallery.gallery.toUpperCase()}</h1> 
+        <div className="absolute top-[125px] text-center inset-x-0 -z-10 bg-orange-100/80 mx-auto w-fit rounded-sm">
+        <h1 className="text-5xl font-bold text-center p-6">{gallery.gallery}</h1> 
       </div>
       <div className="px-4 bg-white mt-[300px] min-h-screen py-6">
         {
           gallery.statement &&
-          <div className='flex justify-center text-center'>
-            <p className="text-2xl p-6 bg-slate-100 mb-3">{gallery.statement}</p>
+          <div className='flex flex-col justify-center text-center content-center items-center'>
+            <p className="text-2xl p-6 bg-slate-100 my-5 lg:w-2/3 w-auto">{gallery.statement}</p>
           </div>
         }
         <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-2">
@@ -46,8 +46,8 @@ const GalleryDetails = ({ gallery, galleries }) => {
                 src={urlFor(subGallery.bannerPhoto).quality(25)}
                 onClick={() => {window.location.href=`/galleries/${subGallery.slug.current}`}} 
               />
-              <p className="text-xl font-bold group-hover:underline">{subGallery.gallery.toUpperCase()}</p>
-              <p className="text-sm font-bold text-gray-600">{subGallery.paintings?.length} PAINTING(S)</p>
+              <p className="text-xl font-bold group-hover:underline text-center">{subGallery.gallery}</p>
+              <p className="text-sm font-bold text-gray-600">{subGallery.paintings?.length} painting(s)</p>
             </div>          
           ))}
         </div>

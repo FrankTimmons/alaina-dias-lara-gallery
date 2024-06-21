@@ -13,8 +13,8 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       fontFamily: {
-        'bold': ['"Roboto"', 'sans-serif'],
-        'bold': ['"Roboto"', 'sans-serif'],
+        'bold': ['"Vollkorn SC"', 'serif'],
+        // 'bold': ['"Roboto"', 'sans-serif'],
       },
       keyframes: {
         'imgFadeIn': {

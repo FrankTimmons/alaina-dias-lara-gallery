@@ -11,9 +11,9 @@ const Painting = ({painting, onClick}) => {
       <ImageFadeIn 
         className='h-[300px] w-[300px] 2xl:h-[400px] 2xl:w-[400px] object-contain p-3'
         opacityTransition={1.5}
-        src={urlFor(painting.image).quality(25)}
+        src={urlFor(painting.image)}
       />
-      <p className="text-xl font-bold">{painting.name.toUpperCase()}</p>
+      <p className="text-xl font-bold text-center">{painting.name}</p>
       <p>{painting.dimensions}</p>
     </div>
   );

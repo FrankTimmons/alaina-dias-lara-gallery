@@ -11,7 +11,7 @@ const Galleries = ({frontPage, galleries}) => {
         src={urlFor(frontPage[0].image)}
       />
       <div className="absolute top-[125px] text-center inset-x-0 -z-10 bg-orange-100/80 mx-auto w-fit">
-        <h1 className="text-5xl font-bold text-center p-6">GALLERIES</h1> 
+        <h1 className="text-5xl font-bold text-center p-4">galleries</h1> 
       </div>
       <div className="px-4 bg-orange-50 mt-[300px] min-h-screen py-6 flex justify-center">
         <div className="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 gap-2">
@@ -26,9 +26,9 @@ const Galleries = ({frontPage, galleries}) => {
                 src={urlFor(gallery.bannerPhoto)}
                 onClick={() => {window.location.href=`/galleries/${gallery.slug.current}`}} 
               />
-              <p className="text-xl font-bold group-hover:underline">{gallery.gallery.toUpperCase()}</p>
+              <p className="text-xl font-bold group-hover:underline text-center">{gallery.gallery.toUpperCase()}</p>
               { gallery.paintings &&
-                <p className="text-sm font-bold text-gray-600">{gallery.paintings.length} PAINTING(S)</p>
+                <p className="text-sm font-bold text-gray-600">{gallery.paintings.length} painting(s)</p>
               }
             </div>
           ))}

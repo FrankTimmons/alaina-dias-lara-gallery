@@ -33,7 +33,7 @@ const ProductDetails = ({ product, products}) => {
         src={urlFor(product?.images[0])}
       />
       <div className="absolute top-[125px] text-center inset-x-0 -z-10 bg-white/80 mx-auto w-fit">
-        <h1 className="text-5xl font-bold text-center p-6">{product?.product.toUpperCase()}</h1> 
+        <h1 className="text-5xl font-bold text-center p-6">{product?.product}</h1> 
       </div>
       <div className="px-4 bg-white mt-[300px] min-h-screen py-6">
         <div className='flex sm:flex-row flex-col sm:items-center sm:gap-6 gap-3 bg-slate-100 p-6 mx-auto mt-6 lg:w-2/3'>
