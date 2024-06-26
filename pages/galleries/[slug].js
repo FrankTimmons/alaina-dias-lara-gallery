@@ -24,8 +24,8 @@ const GalleryDetails = ({ gallery, galleries }) => {
         onLoad={() => setLoading(false)}
       />     
       <div>
-        <div className="absolute top-[125px] text-center inset-x-0 -z-10 bg-orange-100/80 mx-auto w-fit rounded-sm">
-        <h1 className="text-5xl font-bold text-center p-6">{gallery.gallery}</h1> 
+        <div className="fixed top-[125px] text-center inset-x-0 -z-10 bg-orange-100/80 mx-auto w-fit rounded-sm">
+        <h1 className="text-5xl font-bold text-center p-6">{gallery.gallery.toLowerCase()}</h1> 
       </div>
       <div className="px-4 bg-orange-50 mt-[300px] min-h-screen py-6">
         {

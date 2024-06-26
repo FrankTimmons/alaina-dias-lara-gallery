@@ -8,3 +8,7 @@
   .font-outline-4 {
     -webkit-text-stroke: 4px black;
   }
+
+body {
+  min-width: 435px;
+}

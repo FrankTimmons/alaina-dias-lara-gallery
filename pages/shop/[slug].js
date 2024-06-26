@@ -32,8 +32,8 @@ const ProductDetails = ({ product, products}) => {
         className='fixed top-0 w-full h-[300px] object-cover -z-10'
         src={urlFor(product?.images[0])}
       />
-      <div className="absolute top-[125px] text-center inset-x-0 -z-10 bg-white/80 mx-auto w-fit">
-        <h1 className="text-5xl font-bold text-center p-6">{product?.product}</h1> 
+      <div className="fixed top-[125px] text-center inset-x-0 -z-10 bg-orange-100/80 mx-auto w-fit">
+        <h1 className="text-5xl font-bold text-center p-6">{product?.product.toLowerCase()}</h1> 
       </div>
       <div className="px-4 bg-orange-50 mt-[300px] min-h-screen py-6">
         <div className='flex sm:flex-row flex-col sm:items-center sm:gap-6 gap-3 bg-orange-100 p-6 mx-auto mt-6 lg:w-2/3'>

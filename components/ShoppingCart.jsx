@@ -7,7 +7,7 @@ const ShoppingCart = () => {
   const { shouldDisplayCart, cartCount, cartDetails } = useShoppingCart();
 
   return (
-    <div className={`bg-white/80 flex flex-col absolute lg:right-9 right-[10%] top-16 w-80 py-4 px-4 shadow-[0_5px_15px_0_rgba(0,0,0,.15)] transition-opacity duration-200 ${ shouldDisplayCart ? "opacity-100" : "opacity-0"}`}>
+    <div className={`bg-orange-100/80 flex flex-col absolute lg:right-9 right-[10%] top-16 w-80 py-4 px-4 shadow-[0_5px_15px_0_rgba(0,0,0,.15)] transition-opacity duration-200 ${ shouldDisplayCart ? "opacity-100" : "opacity-0"}`}>
 
       {cartCount && cartCount > 0 ? (
         <>

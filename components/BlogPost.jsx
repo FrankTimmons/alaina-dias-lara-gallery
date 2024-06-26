@@ -9,7 +9,7 @@ const BlogPost = ({post}) => {
 
   return (
     <div className='flex flex-col py-4 p-6 m-6 lg:w-2/3 w-[90%]'>
-      <div className='text-3xl font-bold text-black text-6xl'>{post.title}</div>
+      <div className='text-3xl font-bold text-black md:text-6xl'>{post.title}</div>
       <div className='text-xl text-gray-400 mb-3'>{post.date}</div>
       <div className='sm:text-xl text-md'>
         {post.pictures &&
@@ -19,18 +19,6 @@ const BlogPost = ({post}) => {
               opacityTransition={1.5}
               src={urlFor(post.pictures[pictureIndex]).quality(10)}
             /> 
-            <div className='flex flex-row justify-center items-center gap-3'>
-            {post?.pictures.map((image, index) => 
-                <div key={index} className='w-[75px] h-[75px] m-2 cursor-pointer '>
-                  <ImageFadeIn
-                    className='object-cover w-[75px] h-[75px] hover:border-blue-800 border-2 duration-200'
-                    onClick={() => setPictureIndex(index)}
-                    opacityTransition={1.5}
-                    src={urlFor(image).quality(5)}
-                  /> 
-                </div>
-              )}
-            </div>
           </div>
         }
           <BlockContent

@@ -10,10 +10,10 @@ const Shop = ({frontPage, products}) => {
         className='fixed top-0 w-full h-[300px] object-cover -z-10'
         src={urlFor(frontPage[0].image)}
       />
-      <div className="absolute top-[125px] text-center inset-x-0 -z-10 bg-white/80 mx-auto w-fit">
+      <div className="fixed top-[125px] text-center inset-x-0 -z-10 bg-orange-100/80 mx-auto w-fit">
         <h1 className="text-5xl font-bold text-center p-6">shop</h1> 
       </div>
-      <div className="px-4 bg-white mt-[300px] min-h-screen py-6">
+      <div className="px-4 bg-orange-50 mt-[300px] min-h-screen py-6">
         <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-2">
           {products.map((product, index) => (
             <div
@@ -25,7 +25,7 @@ const Shop = ({frontPage, products}) => {
                 src={urlFor(product?.images[0]).quality(10)}
                 onClick={() => {window.location.href=`/shop/${product.slug.current}`}} 
               />
-              <p className="text-2xl font-bold group-hover:underline">{product.product}</p>
+              <p className="text-2xl font-bold group-hover:underline">{product.product.toLowerCase()}</p>
               <p className="text-xl font-bold">{formatCurrencyString({value: product.price, currency: "USD"})}</p>
             </div>
           ))}
