@@ -52,6 +52,7 @@ export default function BlogPosts({ frontPage, blogPosts }) {
             <div className='sm:text-xl text-md bg-white p-8'>
               {blogPosts.map((post, index) => (                
                 <li     
+                  key={index}
                   className="flex flex-row items-center cursor-pointer hover:underline" 
                   onClick={()=>{
                     setCurrentPost(index); 
