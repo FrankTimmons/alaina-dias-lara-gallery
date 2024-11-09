@@ -17,7 +17,7 @@ const BlogPost = ({post}) => {
             <ImageFadeIn
               className='object-contain w-[400px] lg:h-[400px] h-auto'
               opacityTransition={1.5}
-              src={urlFor(post.pictures[pictureIndex]).quality(10)}
+              src={urlFor(post.pictures[pictureIndex]).quality(15)}
             /> 
           </div>
         }
