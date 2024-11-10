@@ -4,15 +4,28 @@ import ImageFadeIn from "react-image-fade-in";
 import BlockContent from '@sanity/block-content-to-react'
 import Link from "next/link";
 import { useShoppingCart, formatCurrencyString } from "use-shopping-cart";
-import OrderForm from "@/components/OrderForm";
 
 const ProductDetails = ({ product, products}) => {
   const [pictureIndex, setPictureIndex] = useState(0)
-  const [ordering, setOrdering] = useState(false)
-  const handleFormClick = () => {
-    setOrdering(!ordering)
+  const [quantity, setQuantity] = useState(1);
+
+  const { addItem,  } = useShoppingCart();
+
+  const addToCart = () => {
+    addItem(product, {count: quantity});
+    setQuantity(1);
   }
-  
+
+  const decreaseQuantity = () => {
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+    }
+  };
+
+  const increaseQuantity = () => {
+    setQuantity(quantity + 1);
+  };
+
   return (
     <>
       <img
@@ -46,7 +59,7 @@ const ProductDetails = ({ product, products}) => {
           <div className="h-auto flex flex-col gap-6 justify-between text-xl">
             <div>
               <p className='text-3xl font-bold text-black'>{product?.product}</p>
-              <p className='text-xl text-blue-800'>{formatCurrencyString({value: product?.price, currency: "USD"})}</p>
+              {/* <p className='text-xl text-blue-800'>{formatCurrencyString({value: product?.price, currency: "USD"})}</p> */}
             </div>
             <BlockContent
               blocks={product?.description}
@@ -54,21 +67,63 @@ const ProductDetails = ({ product, products}) => {
               projectId={"3a3zvinb"}
               dataset={"production"}
             />
-            <div className="flex flex-row gap-2">
-              <button 
-                onClick={handleFormClick}
-                className="cursor-pointer border-black border-2 p-2 bg-orange-100 hover:bg-black hover:text-orange-100 duration-200 font-bold w-fit"                
+            {/* <div className="flex justify-around items-center mt-4 mb-2 w-40">
+              <button
+                onClick={decreaseQuantity}
+                className="hover:text-emerald-500 hover:bg-emerald-50 w-2 h-8 rounded-full transition-colors duration-500"
               >
-                place order
+                -
+              </button>
+              <span className="w-2 text-center rounded-md mx-3">{quantity}</span>
+              <button
+                onClick={increaseQuantity}
+                className="hover:text-emerald-500 hover:bg-emerald-50 w-2 h-8 rounded-full transition-colors duration-500"
+              >
+                +
               </button>
             </div>
-            {ordering && <OrderForm handleFormClick={handleFormClick} product={product}/>}
+            <div className="flex flex-row gap-2">
+              <button 
+                className="text-xl rounded-md bg-blue-800 text-white p-4 font-bold w-fit hover:bg-white hover:text-blue-800 border-blue-800 border-2 duration-200 mb-[100px]"
+                onClick={addToCart}
+              >
+                ADD TO CART
+              </button>
+              <Link 
+                type="button" 
+                className="text-xl rounded-md bg-blue-800 text-white p-4 font-bold w-fit hover:bg-white hover:text-blue-800 border-blue-800 border-2 duration-200 mb-[100px]" 
+                href={product?.paymentLink}
+              >
+                BUY NOW
+              </Link>
+            </div> */}
           </div>
         </div>
       </div>
     </>
   );
 };
+
+// export const getStaticPaths = async () => {
+//   const query = `*[_type == "products"] {
+//     slug {
+//       current
+//     }
+//   }`;
+
+//   const products = await client.fetch(query);
+
+//   const paths = products.map((product) => ({
+//     params: {
+//       slug: product.slug.current,
+//     },
+//   }));
+
+//   return {
+//     paths,
+//     fallback: "blocking",
+//   };
+// };
 
 export const getServerSideProps = async ({ params: { slug } }) => {
   const product = await client.fetch(
