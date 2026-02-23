@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@sanity/block-content-to-react": "^3.0.0",
+    "@sanity/client": "^7.15.0",
     "@sanity/image-url": "^1.0.2",
     "@svgr/webpack": "^8.0.1",
     "autoprefixer": "10.4.14",
@@ -17,7 +18,7 @@
     "eslint-config-next": "13.4.2",
     "html-react-parser": "^4.0.0",
     "next": "13.4.2",
-    "next-sanity": "^4.3.2",
+    "next-sanity": "^12.1.0",
     "node": "^24.13.1",
     "postcss": "8.4.23",
     "react": "18.2.0",
