@@ -73,7 +73,8 @@ export default {
     {
       name: 'bannerPhoto',
       type: 'image',
-      title: 'Banner Photo'
+      title: 'Banner Photo',
+      options: { hotspot: true }
     },
   ]
 }
