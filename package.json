@@ -14,6 +14,7 @@
     "@sanity/image-url": "^1.0.2",
     "@svgr/webpack": "^8.0.1",
     "autoprefixer": "10.4.14",
+    "css-select": "^6.0.0",
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.2",
     "html-react-parser": "^4.0.0",

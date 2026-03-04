@@ -38,22 +38,22 @@ const Navbar = () => {
 
         <ShoppingCart/>
         
-        <button className="lg:hidden z-10 cursor-pointer flex justify-end items-center px-4 w-full h-[60px]" onClick={handleCartClick}>
+        {/* <button className="lg:hidden z-10 cursor-pointer flex justify-end items-center px-4 w-full h-[60px]" onClick={handleCartClick}>
           <FaShoppingCart
             className='text-2xl'        
             />
-        </button>
+        </button> */}
 
         <div onClick={handleClick} className="lg:hidden z-10 cursor-pointer flex justify-end items-center px-4 h-[60px]">
           {!nav ? <FaBars /> : <FaTimes />}
         </div>
 
         <div className='justify-end lg:flex hidden'>
-          <button className="z-10 cursor-pointer flex justify-end items-center px-4 w-full h-[60px]" onClick={handleCartClick}>
+          {/* <button className="z-10 cursor-pointer flex justify-end items-center px-4 w-full h-[60px]">
             <FaShoppingCart
               className='text-2xl'        
               />
-          </button>
+          </button> */}
           <div className='flex items-center'>
             <div onClick={handleContactClick} className='w-auto cursor-pointer border-black border-2 p-2 bg-orange-100 hover:bg-black hover:text-orange-100 duration-200'>
               CONTACT
