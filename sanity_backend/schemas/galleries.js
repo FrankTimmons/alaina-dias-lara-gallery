@@ -76,5 +76,11 @@ export default {
       title: 'Banner Photo',
       options: { hotspot: true }
     },
+    {
+      name: 'thumbnail',
+      type: 'image',
+      title: 'Thumbnail',
+      options: { hotspot: true }
+    },
   ]
 }

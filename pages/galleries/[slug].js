@@ -10,6 +10,8 @@ const GalleryDetails = ({ gallery, galleries }) => {
   const [loading, setLoading] = useState(true);
 
   // commit
+
+  
   
   useEffect(() => {
     setLoading(false)
@@ -43,7 +45,7 @@ const GalleryDetails = ({ gallery, galleries }) => {
             >
               <ImageFadeIn
                 className='h-[300px] w-[300px] 2xl:h-[400px] 2xl:w-[400px] object-contain cursor-pointer p-3'
-                src={urlFor(subGallery.bannerPhoto).quality(25)}
+                src={urlFor(subGallery.thumbnail).quality(25)}
                 onClick={() => {window.location.href=`/galleries/${subGallery.slug.current}`}} 
               />
               <p className="text-xl font-bold group-hover:underline text-center">{subGallery.gallery}</p>
